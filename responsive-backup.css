@@ -1,0 +1,92 @@
+@media only screen and (max-width: 900px) {
+
+	.programs-grid {
+		grid-template-columns: 1fr; /* Changes to a single column */
+		padding: 1.5vh;
+	}
+
+	.programs-grid img {
+		width:100%;
+	}
+
+	.image-row {
+		grid-template-columns: auto auto;
+		grid-auto-flow: unset;
+		margin: 4% 0%
+	}
+
+	.section-image-grid {
+		margin: 4% 0;
+	}
+
+	#oddfellows-sonic-packaging-grid {
+		grid-auto-flow: row;
+		gap: 2vw;
+	}
+
+	#oddfellows-sonic-comparison-grid {
+		width:95%;
+	}
+	
+			#oddfellows-sonic-comparison-grid img {
+			height: 9vw;
+		}
+
+	#oddfellows-sonic-merchandise-grid {
+		grid-template-rows: auto auto;
+	}
+
+	.hover-container:hover img {
+		transform: scale(var(--hover-scale-mobile));
+	}
+	
+	h1 {
+		font-size: clamp(1rem, 2.75vh, 5rem);
+		line-height: 3.25vh;
+		margin: 3% 0;
+	}
+
+	:root {
+		--project-content-width: 90%; 
+	}
+
+}
+
+@media only screen and (max-width:560px) {
+
+	:root {
+		--project-content-width: 90%; 
+	}
+
+	p {
+		font-size: 65%;
+		line-height: 4.25vw;
+	}
+
+	.meta-label {
+		font-size: 80%;
+	}
+	
+	h1 {
+		margin: 4.5% 0;
+		line-height: 100%;
+	}
+	
+	.programs-grid {
+		border: 1.35vw solid;
+		padding: 13%;
+	}
+	
+	#oddfellows-sonic-comparison-wrapper {
+		padding: 1% 0;
+	}
+	
+		#oddfellows-sonic-comparison-wrapper p {
+			font-size: 3.5vw;
+		}
+
+		#oddfellows-sonic-comparison-grid img {
+			height: 9vw;
+		}
+
+}

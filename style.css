@@ -1,0 +1,214 @@
+:root {
+	--bg: #f4b844;
+	--light: #e84b17;
+	--med: #bf2413;
+	--dark: #801c1c;   
+    --drop-shadow: drop-shadow(0 5px 5px rgba(0,0,0,0.65));
+    --image-scale-anim: all 0.2s ease;
+    --content-width: clamp(40rem, 50vmax, 100rem);
+    --content-width-mobile: 90%;
+}
+
+/* --- Extra Light (100) --- */
+@font-face {
+    font-family: "ITC Avant Garde Gothic Pro";
+    font-weight: 100;
+    font-style: normal;
+    src: url("./fonts/ITCAvantGardePro-XLt.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "ITC Avant Garde Gothic Pro";
+    font-weight: 100;
+    font-style: italic;
+    src: url("./fonts/ITCAvantGardePro-XLtOblique.otf") format("opentype");
+}
+
+/* --- Book (400 - Standard/Regular) --- */
+@font-face {
+    font-family: "ITC Avant Garde Gothic Pro";
+    font-weight: 400;
+    font-style: normal;
+    src: url("./fonts/ITCAvantGardePro-Book.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "ITC Avant Garde Gothic Pro";
+    font-weight: 400;
+    font-style: italic;
+    src: url("./fonts/ITCAvantGardePro-BookOblique.otf") format("opentype");
+}
+
+/* --- Medium (500) --- */
+@font-face {
+    font-family: "ITC Avant Garde Gothic Pro";
+    font-weight: 500;
+    font-style: normal;
+    src: url("./fonts/ITCAvantGardePro-Medium.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "ITC Avant Garde Gothic Pro";
+    font-weight: 500;
+    font-style: italic;
+    src: url("./fonts/ITCAvantGardePro-MediumOblique.otf") format("opentype");
+}
+
+/* --- Demi (600 - Semi Bold) --- */
+@font-face {
+    font-family: "ITC Avant Garde Gothic Pro";
+    font-weight: 600;
+    font-style: normal;
+    src: url("./fonts/ITCAvantGardePro-Demi.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "ITC Avant Garde Gothic Pro";
+    font-weight: 600;
+    font-style: italic;
+    src: url("./fonts/ITCAvantGardePro-DemiOblique.otf") format("opentype");
+}
+
+/* --- Bold (700) --- */
+@font-face {
+    font-family: "ITC Avant Garde Gothic Pro";
+    font-weight: 700;
+    font-style: normal;
+    src: url("./fonts/ITCAvantGardePro-Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "ITC Avant Garde Gothic Pro";
+    font-weight: 700;
+    font-style: italic;
+    src: url("./fonts/ITCAvantGardePro-BoldOblique.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Gastromond";
+    font-weight: 700;
+    font-style: italic;
+    src: url("./fonts/GastromondItalic.otf") format("opentype");
+}
+
+
+/* Global Attributes */
+body, html {
+	margin: 0;
+	padding: 0;
+	background-color: var(--bg);
+	height: 100%;
+	font-family: 'ITC Avant Garde Gothic Pro';
+	font-size: 1.12em;
+	overflow-x: hidden;
+	color: var(--dark);
+}
+
+h1 {
+    font-family: Gastromond;
+	font-style: italic;
+	font-size: clamp(1.75rem, 2.25vmax, 4rem);
+	font-weight: 700;
+    transform-origin: left;
+    transform: scale(1,1.25);
+    letter-spacing: -5%;
+    margin:2.25vh 0;
+    line-height: 95%;
+}
+
+h4 {
+	font-size: clamp(1.75rem, 4vh, 5rem);
+	font-weight: 400;
+    text-transform: uppercase;
+	margin: 0;
+	letter-spacing: -.155rem;
+    line-height:90%;
+}
+
+p {
+    font-weight: 500;
+    font-size: clamp(.75rem, .75vmax, 2rem);
+    line-height: clamp(1.1rem, 1vw, 2.1rem);
+    letter-spacing: -.01rem;
+    margin: 0;
+}
+
+.tooltip {
+    text-align: center;
+    font-weight: 600;
+    margin: 1vw 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+strong {
+    font-weight: 800;
+    font-style: italic;
+}
+
+/* ==================
+STICKY HOME BUTTON
+=====================*/
+
+.home-button a {
+	font-weight: 800;
+    font-size: clamp(1rem, 1vw, 2rem);
+	color: var(--dark);
+}
+
+.home-button a:hover {
+	color: var(--med);
+}
+
+.home-button {
+    display: inline;
+    position: sticky;
+    overflow: visible;
+    top:0;
+    z-index: 9;
+    align-self: center;
+    width: var(--content-width);
+    padding: 1vh 100%;
+    background-color: var(--bg);
+}
+
+/* ==================
+HOVER CONTAINER LOGIC
+=====================*/
+
+.hover-container {
+    z-index: 1;
+    position:relative;
+}
+
+.hover-container img {
+    display:block;
+    pointer-events: none;
+}
+
+.hover-container:hover {
+    z-index: 10; 
+}
+
+.hover-container:hover img {
+    transform: scale(var(--hover-scale));
+    z-index:1;
+    filter: var(--drop-shadow);
+    border-radius: 0;
+}
+
+@media only screen and (max-width:850px) {
+
+    .hover-container:hover img {
+        transform:scale(var(--hover-scale-mobile));
+    }
+
+    .home-button {
+        width: var(--content-width-mobile)
+    }
+    
+}
+
+/* GITHUB TEST */

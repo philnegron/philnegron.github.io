@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44.71 54.52">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: -.07em;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #801c1c;
+      }
+
+      .cls-3 {
+        font-family: ITCAvantGardePro-Bk, 'ITC Avant Garde Gothic Pro';
+        font-size: 8px;
+      }
+
+      .cls-4 {
+        letter-spacing: -.07em;
+      }
+
+      .cls-5 {
+        fill: #efba43;
+        font-family: ITCAvantGardePro-Demi, 'ITC Avant Garde Gothic Pro';
+        font-size: 28.05px;
+        font-weight: 300;
+        letter-spacing: -.03em;
+      }
+
+      .cls-6 {
+        letter-spacing: -.15em;
+      }
+    </style>
+  </defs>
+  <g id="sidebar_thin" data-name="sidebar thin">
+    <g>
+      <text class="cls-3" transform="translate(1.57 52.68)"><tspan class="cls-1" x="0" y="0">ILLUSTR</tspan><tspan class="cls-6" x="22.77" y="0">A</tspan><tspan class="cls-4" x="27.48" y="0">TOR</tspan></text>
+      <g>
+        <rect class="cls-2" width="44.71" height="41.41" rx="10.28" ry="10.28"/>
+        <text class="cls-5" transform="translate(9.05 30.78)"><tspan x="0" y="0">Ai</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

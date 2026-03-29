@@ -1,0 +1,326 @@
+.page-wrapper {
+    display:flex;
+    position: relative;
+	align-content: center;
+	justify-content: center;
+    flex-direction: column;
+}
+
+.content {
+	display: flex;
+	/* width: 100vh; */
+	width: var(--content-width);
+	flex-direction: column;
+	align-self: center;
+	/* justify-content: center; */
+}
+
+.stripe {
+	height: 3vh;
+	width: 100%;
+	background:
+		linear-gradient( to bottom, var(--dark) 0%, var(--dark) 27.4%, var(--bg) 27.4%, var(--bg) 36.2%, var(--med) 36.2%, var(--med) 63.7%, var(--bg) 63.7%, var(--bg) 72.5%, var(--light) 72.5%, var(--light) 100% );
+	transform-box: fill-box;
+	transform-origin: center;
+	transform: scaleX(0);
+	animation: drawStripe 2s ease-in forwards;
+}
+
+@keyframes drawStripe {
+	to {
+		transform: scaleX(10);
+	}
+}
+
+/*
+=====================
+HEADER / BANNER
+=====================
+*/
+
+.header {
+    width: var(--content-width);
+    margin: 0 auto;
+    position: relative;
+}
+
+/*
+=====================
+CONTENT: META-ROW GRID
+=====================
+*/
+
+.meta-grid {
+    display:grid;
+    grid-template-columns: 4fr auto;
+    grid-template-areas: 
+    'meta-info meta-info'
+	'meta-desc meta-programs';
+    width: 100%;
+	row-gap: min(1.5rem, 1.25vh);
+	column-gap: min(1.5rem, 3%);
+    margin: 1.75vh 0;
+}
+
+.meta-label {
+	font-size: /*2.75vh*/ clamp(1rem, 1.25vmax, 2rem);
+	font-weight: 400;
+	letter-spacing: -1%;
+}
+
+	.job-title {
+		grid-area: meta-info;
+	}
+
+	.date {
+		grid-area: meta-info;
+		text-align: right;
+	}
+
+	.description {
+		grid-area: meta-desc;
+	}
+
+		.image-row {
+			margin: 2% 0;
+			display:grid;
+			grid-auto-flow: column;
+			grid-auto-columns: auto;
+			gap: 2%;
+		}
+
+			.image-row img {
+				width:100%;
+				height:100%;
+				object-fit: cover;
+				border-radius: .75rem;
+				transition: var(--image-scale-anim);
+			}
+
+			.image-row img:hover {
+				transform: scale(3);
+				filter: var(--drop-shadow);
+			}
+
+	.programs-grid {
+		display:grid;
+		padding: clamp(.5rem, .70vmax, 1.5rem);
+		gap: min(1rem, .75vmax);
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto; 
+		grid-area: meta-programs;
+		justify-content: end;
+		align-items: start;
+		/* border: clamp(.35rem, .425vmax, 1rem) var(--dark) solid; */
+		border: clamp(.25rem, .5vmax, .95rem) var(--dark) solid;
+		border-radius: min(2.5rem,1.75vmax);
+		height: fit-content;
+	}
+
+		.programs-grid img {
+			justify-self: center;
+			align-self: center;
+			width: 6vmin;
+			height: auto;
+			transition: var(--image-scale-anim);
+		}
+
+		.programs-grid img:hover {
+			transform: scale(1.1);
+		}
+
+/*
+=====================
+CONTENT: SECTIONS
+=====================
+*/
+
+/* Remember: sections have 2% margin on top and bottom, so don't add margins on the top or bottom titles/paragraphs */
+
+.section {
+	margin: 2vmax 0;
+}
+
+.section-image-grid {
+	display:grid;
+	margin: 2% 0;
+	align-items: center;
+	justify-items: center;
+}
+
+	.section-image-grid img {
+		width:100%;
+		height:auto;
+		border-radius: .5rem;
+		transition: var(--image-scale-anim);
+	}
+
+/*
+=====================
+ODDFELLOWS X SONIC
+=====================
+*/
+
+.genesis-bg-wrapper {
+    background-color: #222;
+    /* Grid */
+    background-image: 
+        linear-gradient(to right, #444 3%, transparent 3%),
+        linear-gradient(to bottom, #444 3%, transparent 3%);
+    background-size: 60px 60px;
+    padding: 0.5%;
+    
+    /* Animation */
+    animation: moveGridTopLeft 1s linear infinite;
+}
+
+@keyframes moveGridTopLeft {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        /* Negative values move the background UP and LEFT */
+        /* Must match background-size (40px) for a seamless loop */
+        background-position: -60px -60px;
+    }
+}
+
+#oddfellows-sonic-banner-grid {
+	display:grid;
+	grid-template-areas:
+		'ghp tms logo insert'
+		'fff srf logo insert';
+	grid-template-columns: 1fr 1fr 3fr 2fr;
+	align-items:center;
+	justify-items: center;
+	row-gap: 3%;
+	column-gap: 2%;
+	padding:1%;
+}
+
+	#oddfellows-sonic-banner-grid img {
+		width: 100%;
+		height: auto;
+		transition: var(--image-scale-anim);
+	}
+
+		#oddfellows-sonic-banner-grid img:hover {
+			transform: scale(1.25);
+			z-index:10;
+		}
+
+#oddfellows-sonic-logo {
+	grid-area: logo;
+	width:100%;
+}
+
+#oddfellows-sonic-insert {
+	grid-area: insert;
+	width: 10%;
+	height:auto;
+}
+
+#oddfellows-tub-top {
+	align-self:end;
+}
+
+#oddfellows-tub-bottom {
+	align-self:baseline;
+}
+
+#oddfellows-sonic-packaging-grid {
+	display:grid;
+	grid-auto-flow: column;
+	grid-template-rows: auto auto;
+	gap: .5vw;
+	align-items:center;
+	justify-content:center;
+}
+
+	#oddfellows-sonic-packaging-grid img {
+		object-fit: contain;
+	}
+
+#oddfellows-sonic-packaging-tooltip {
+	 grid-area:tooltip;
+}
+
+	#oddfellows-sonic-comparison-wrapper p {
+		display:grid;
+		text-align: center;
+		justify-self: center;
+		align-self:center;
+		color:white;
+		text-transform:uppercase;
+		font-weight: 600;
+		font-size:clamp(1rem, 1.25vmax, 4rem);
+		padding:1vh;
+	}
+
+#oddfellows-sonic-comparison-grid {
+	display: grid;
+	grid-auto-flow: unset;
+	grid-template-columns: repeat(8, auto);
+	grid-template-rows: 1fr 1fr;
+	place-items: center;
+	row-gap: 2vmax;
+	margin: 1% auto;
+	width: var(--content-width);
+}
+
+#oddfellows-sonic-comparison-grid img {
+	width:auto;
+	height:min(3rem, 4.75vh);
+	border-radius:0%;
+	transition: var(--image-scale-anim);
+}
+
+#oddfellows-sonic-merchandise-grid {
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: auto;
+	gap:3%;
+	filter: drop-shadow(-.125rem .125rem 0 rgba(0,0,0,.50));
+	place-items: center;
+}
+
+#oddfellows-sonic-merchandise-grid img {
+	width:auto;
+	height:15vh;
+}
+
+/*
+=====================
+RESPONSIVE ELEMENTS
+=====================
+*/
+
+/* Predominantly meant for smart devices */
+
+@media only screen and (max-width:850px) {
+	
+	.programs-grid {
+		grid-template-columns: 1fr;
+	}
+
+		.programs-grid img {
+			width:min(4rem, 13vmin);
+		}
+
+	#oddfellows-sonic-merchandise-grid {
+		grid-template-rows: auto auto;
+	}
+
+	#oddfellows-sonic-packaging-grid {
+		grid-auto-flow: row;
+		grid-auto-rows: auto;
+	}
+
+	.image-row {
+		grid-template-rows: 1fr 1fr;
+	}
+	
+	.content, #oddfellows-sonic-banner-grid {
+		width: var(--content-width-mobile);
+	}
+}

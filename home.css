@@ -1,0 +1,157 @@
+/* Layout Container */
+.page-wrapper {
+	position: relative;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.main-content {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	/*! flex: 1 1 114vw; */
+	width: max(30vh,95vh);
+  	transform: rotate(-0.05deg);
+	padding: 0 5%;
+}
+
+/* Navigation Bar */
+.top-row a {
+	color: var(--dark);
+}
+
+.bottom-row a {
+	color: var(--dark);
+}
+
+.logo-section {
+	position: relative;
+	min-width: 50%;
+	max-width: 50%;
+}
+
+.nav-container {
+	display: flex;
+	flex-direction: column;	text-align: center;
+	font-size: clamp(1rem, 2.5vw, 2.5vh);
+	font-weight: 600;
+}
+
+.nav-container a:hover  {
+	color: var(--med);
+}
+
+.link-row {
+	display: flex;
+	justify-content: end;
+	padding: 0% 4%;
+}
+
+.link-row a {
+	opacity: 0%;
+	text-decoration: none;
+	letter-spacing: -8.5%;
+	padding: 1% 2%;
+	animation-delay: 0.5s;
+	animation-name: fadeIn;
+	animation-duration: 1s; /* Duration of the animation */
+	animation-fill-mode: forwards; /* Ensures the element stays at the final state (opacity: 1) after the animation finishes */
+}
+
+@keyframes fadeIn {
+    0% {
+			translate: 0% 75%;
+      opacity: 0; /* Start completely transparent */
+    }
+    100% {
+			translate: 0% 150%;/* End fully opaque */
+      opacity: 1;
+    }
+}
+
+.link-row.bottom-row {
+	margin-top: auto;
+}
+
+/* SVG Logo Attributes */
+.st0 {
+	fill: #e84b17;
+}
+
+.st1 {
+	fill: none;
+}
+
+.st2 {
+	fill: #801c1c;
+}
+
+.st3 {
+	fill: #bf2413;
+}
+
+/* SVG Stripe Attributes */
+.str1 {
+	fill: #e84b17;
+}
+
+.str2 {
+	fill: #801c1c;
+}
+
+.str3 {
+	fill: #bf2413;
+}
+		
+.logo-section svg {
+	width: 100%;
+	height: auto;
+	display: inline-flex;
+  overflow: visible;
+}
+
+/* Shared stripe base */
+.stripe {
+	position: absolute;
+	height: 5.9%;
+	width: 100vw;
+	pointer-events: none;
+	transform: scaleX(0);
+	animation: drawStripe 2s ease-in-out forwards;
+}
+
+/* Stripe intro animation */
+@keyframes drawStripe {
+	to {
+		transform: scaleX(100);
+	}
+}
+
+/* LEFT SIDE STRIPES */
+.left-stripe {
+	right: 99.5%;
+	transform-origin: right center;
+}
+
+/* RIGHT SIDE STRIPES */
+.right-stripe {
+	left: 99.5%;
+	transform-origin: left center;
+}
+
+.l-rects rect {
+	transform-box: fill-box;
+	transform-origin: right center;
+	transform: scaleX(0);
+	animation: drawStripe 1s ease-in forwards;
+}
+
+.r-rects rect {
+	transform-box: fill-box;
+	transform-origin: left center;
+	transform: scaleX(0);
+	animation: drawStripe 1s ease-in forwards;
+}
