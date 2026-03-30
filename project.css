@@ -46,7 +46,13 @@ HEADER / BANNER
 
 /*
 =====================
-CONTENT: META-ROW GRID
+CONTENT: META GRID
+
+Was 2 rows and 2 columns, but that made it
+difficult to actually scale elements on mobile.
+This divided top row and bottom row allows the job date
+to be independent of the programs grid width and
+makes life not miserable.
 =====================
 */
 
@@ -55,6 +61,7 @@ CONTENT: META-ROW GRID
 	grid-auto-flow: column;
 	grid-auto-columns: 2fr 1fr;
 	margin: 1.5vmax 0 1vmax 0;
+	align-items: center;
 }
 
 	.meta-label {
@@ -308,6 +315,7 @@ RESPONSIVE ELEMENTS
 	#oddfellows-sonic-packaging-grid {
 		grid-auto-flow: row;
 		grid-auto-rows: auto;
+		row-gap: 1vh;
 	}
 
 	#oddfellows-sonic-comparison-grid {
