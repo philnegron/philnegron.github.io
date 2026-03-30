@@ -187,18 +187,17 @@ ODDFELLOWS X SONIC
 #oddfellows-sonic-banner-grid {
 	display:grid;
 	grid-template-areas:
-		'ghp tms logo insert'
-		'fff srf logo insert';
-	grid-template-columns: 1fr 1fr 3fr 2fr;
+		'tubs logo insert';
+	grid-template-columns: 1fr 1fr 1fr;
 	place-items: center;
-	row-gap: 1vh;
-	column-gap: 1vh;
-	padding: 1vh;
+	gap: 1vh;
+	height: 100%;
 }
 
 	#oddfellows-sonic-banner-grid img {
-		width: 100%;
-		height: auto;
+		max-width: 100%;
+		height: 10rem;
+		object-fit: contain;
 		transition: var(--image-scale-anim);
 	}
 
@@ -207,29 +206,22 @@ ODDFELLOWS X SONIC
 			z-index:10;
 		}
 
-#oddfellows-sonic-logo {
-	grid-area: logo;
-}
+	#oddfellows-sonic-tub-grid {
+		display:grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		gap: 1vh;
+		place-items: center;
+	}
 
-#oddfellows-sonic-insert {
-	grid-area: insert;
-}
 
-#oddfellows-tub-top {
-	align-self:end;
-}
-
-#oddfellows-tub-bottom {
-	align-self:baseline;
-}
 
 #oddfellows-sonic-packaging-grid {
 	display:grid;
 	grid-auto-flow: column;
 	grid-template-rows: auto auto;
 	gap: .5vw;
-	align-items:center;
-	justify-content:center;
+	place-items: center;
 }
 
 	#oddfellows-sonic-packaging-grid img {
