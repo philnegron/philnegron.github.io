@@ -60,12 +60,12 @@ makes life not miserable.
 	display:grid;
 	grid-auto-flow: column;
 	grid-auto-columns: 2fr 1fr;
-	margin: 1.5vmax 0 1vmax 0;
+	margin: 1.25vmax 0 1vmax 0;
 	align-items: center;
 }
 
 	.meta-label {
-		font-size: clamp(1rem, 2vmax, 3rem);
+		font-size: clamp(1rem, 1.5vmax, 3rem);
 		font-weight: 400;
 		text-transform: uppercase;
 	}
@@ -190,11 +190,10 @@ ODDFELLOWS X SONIC
 		'ghp tms logo insert'
 		'fff srf logo insert';
 	grid-template-columns: 1fr 1fr 3fr 2fr;
-	align-items:center;
-	justify-items: center;
-	row-gap: 3%;
-	column-gap: 2%;
-	padding:1%;
+	place-items: center;
+	row-gap: 1vh;
+	column-gap: 1vh;
+	padding: 1vh;
 }
 
 	#oddfellows-sonic-banner-grid img {
@@ -210,13 +209,10 @@ ODDFELLOWS X SONIC
 
 #oddfellows-sonic-logo {
 	grid-area: logo;
-	width:100%;
 }
 
 #oddfellows-sonic-insert {
 	grid-area: insert;
-	width: 10%;
-	height:auto;
 }
 
 #oddfellows-tub-top {
@@ -284,8 +280,8 @@ ODDFELLOWS X SONIC
 }
 
 #oddfellows-sonic-merchandise-grid img {
-	width:auto;
-	height:15vh;
+	width:min(8rem,100%);
+	height:auto;
 }
 
 /*
