@@ -188,10 +188,11 @@ HOVER CONTAINER LOGIC
     pointer-events: none;
 }
 
-.hover-container:focus {
+.hover-container:hover {
     z-index: 10; 
 }
 
+.hover-container:hover img,
 .hover-container:focus img {
     transform: scale(var(--hover-scale));
     z-index:1;
@@ -201,7 +202,8 @@ HOVER CONTAINER LOGIC
 
 @media only screen and (max-width:850px) {
 
-    .hover-container:focus img {
+    .hover-container:hover img,
+    .hover-container:focus {
         transform:scale(var(--hover-scale-mobile));
     }
 
