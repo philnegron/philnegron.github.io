@@ -282,7 +282,7 @@ ODDFELLOWS X SONIC
 
 	#oddfellows-sonic-comparison-grid img {
 		width:auto;
-		height:min(3rem, 4.75vh);
+		height:clamp(2rem, 4.25vmax, 15rem);
 		border-radius:0%;
 		transition: var(--image-scale-anim);
 	}
