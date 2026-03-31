@@ -179,7 +179,6 @@ HOVER CONTAINER LOGIC
 =====================*/
 
 .hover-container {
-    z-index: 1;
     position: relative;
     cursor: pointer;
 }
@@ -187,25 +186,19 @@ HOVER CONTAINER LOGIC
 .hover-container img {
     display: block;
     pointer-events: auto;
+    transition: transform 0.4s ease, filter 0.3s ease;
 }
 
-.hover-container img.expanded {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-    z-index: 1000;
-    filter: var(--drop-shadow);
-    border-radius: 0;
-    transition: var(--image-scale-anim);
-    /* width and height set by JS */
+.hover-container:has(img[style*="z-index"]) {
+    z-index: 9999;
+    position: relative;
 }
 
 #img-overlay {
     display: flex;
     position: fixed;
     inset: 0;
-    z-index: 9999;
+    z-index: 9998;
     align-items: center;
     justify-content: center;
     cursor: pointer;
