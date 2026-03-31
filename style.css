@@ -193,17 +193,20 @@ HOVER CONTAINER LOGIC
 }
 
 .hover-container:hover img {
-    transform: scale(var(--hover-scale));
+    /* transform: scale(var(--hover-scale)); */
     z-index:1;
     filter: var(--drop-shadow);
     border-radius: 0;
+    max-width: 90vw;
+    max-height: 90vh;
+    transition: var(--image-scale-anim);
 }
 
 @media only screen and (max-width:850px) {
 
-    .hover-container:hover img {
+    /* .hover-container:hover img {
         transform:scale(var(--hover-scale-mobile));
-    }
+    } */
 
     .home-button {
         width: var(--content-width-mobile)
