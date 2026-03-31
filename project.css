@@ -292,13 +292,13 @@ ODDFELLOWS X SONIC
 	grid-auto-flow: column;
 	grid-auto-columns: auto;
 	gap:3%;
-	filter: drop-shadow(-.125rem .125rem 0 rgba(0,0,0,.50));
 	place-items: center;
 }
 
 	#oddfellows-sonic-merchandise-grid img {
 		width:min(8rem,100%);
 		height:auto;
+		filter: drop-shadow(-.125rem .125rem 0 rgba(0,0,0,.50));
 	}
 
 /*

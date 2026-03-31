@@ -186,7 +186,7 @@ HOVER CONTAINER LOGIC
 .hover-container img {
     display: block;
     pointer-events: auto;
-    transition: transform 0.4s ease, filter 0.3s ease;
+    transition: var(--image-scale-anim);
 }
 
 .hover-container:has(img[style*="z-index"]) {
@@ -203,7 +203,7 @@ HOVER CONTAINER LOGIC
     justify-content: center;
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0);
-    transition: background-color 0.3s ease;
+    transition: var(--image-scale-anim);
     pointer-events: none;
 }
 
@@ -223,7 +223,7 @@ HOVER CONTAINER LOGIC
     pointer-events: none;
     opacity: 0;
     transform: scale(0.92);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: var(--image-scale-anim);
 }
 
 #img-overlay.active img {
