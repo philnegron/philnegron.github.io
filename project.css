@@ -185,34 +185,59 @@ ODDFELLOWS X SONIC
 }
 
 #oddfellows-sonic-banner-grid {
-	display:grid;
-	grid-template-areas:
-		'tubs logo insert';
-	grid-template-columns: 1fr 1fr 1fr;
-	place-items: center;
-	gap: 1vh;
-	height: 100%;
+    --banner-height: 15rem;
+    display: grid;
+    grid-template-areas: 'tubs logo insert';
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+    gap: 1vh;
+    height: 100%;
+    padding: 1% 0;
 }
 
-	#oddfellows-sonic-banner-grid img {
-		max-width: 100%;
-		height: 10rem;
+#oddfellows-sonic-logo {
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+    transition: var(--image-scale-anim);
+}
+
+	#oddfellows-sonic-logo:hover {
+		transform: scale(1.25);
+		z-index: 10;
+	}
+
+#oddfellows-sonic-insert {
+    height: auto;
+    width: 60%;
+    object-fit: contain;
+    transition: var(--image-scale-anim);
+}
+
+	#oddfellows-sonic-insert:hover {
+		transform: scale(1.25);
+		z-index: 10;
+	}
+
+#oddfellows-sonic-tub-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, min-content);
+    gap: 1vh;
+    justify-self: center;
+    width: 80%;
+}
+
+	#oddfellows-sonic-tub-grid img {
+		width: 100%;
 		object-fit: contain;
 		transition: var(--image-scale-anim);
 	}
 
-		#oddfellows-sonic-banner-grid img:hover {
+		#oddfellows-sonic-tub-grid img:hover {
 			transform: scale(1.25);
-			z-index:10;
+			z-index: 10;
 		}
-
-	#oddfellows-sonic-tub-grid {
-		display:grid;
-		grid-template-columns: repeat(2, 1fr);
-		grid-template-rows: repeat(2, 1fr);
-		gap: 1vh;
-		place-items: center;
-	}
 
 
 
@@ -255,12 +280,12 @@ ODDFELLOWS X SONIC
 	width: var(--content-width);
 }
 
-#oddfellows-sonic-comparison-grid img {
-	width:auto;
-	height:min(3rem, 4.75vh);
-	border-radius:0%;
-	transition: var(--image-scale-anim);
-}
+	#oddfellows-sonic-comparison-grid img {
+		width:auto;
+		height:min(3rem, 4.75vh);
+		border-radius:0%;
+		transition: var(--image-scale-anim);
+	}
 
 #oddfellows-sonic-merchandise-grid {
 	display: grid;
@@ -271,10 +296,10 @@ ODDFELLOWS X SONIC
 	place-items: center;
 }
 
-#oddfellows-sonic-merchandise-grid img {
-	width:min(8rem,100%);
-	height:auto;
-}
+	#oddfellows-sonic-merchandise-grid img {
+		width:min(8rem,100%);
+		height:auto;
+	}
 
 /*
 =====================
