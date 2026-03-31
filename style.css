@@ -180,26 +180,62 @@ HOVER CONTAINER LOGIC
 
 .hover-container {
     z-index: 1;
-    position:relative;
+    position: relative;
+    cursor: pointer;
 }
 
 .hover-container img {
-    display:block;
+    display: block;
+    pointer-events: auto;
+}
+
+.hover-container img.expanded {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 1000;
+    filter: var(--drop-shadow);
+    border-radius: 0;
+    transition: var(--image-scale-anim);
+    /* width and height set by JS */
+}
+
+#img-overlay {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.3s ease;
     pointer-events: none;
 }
 
-.hover-container:hover {
-    z-index: 10; 
+#img-overlay.active {
+    background-color: rgba(0, 0, 0, 0.65);
+    pointer-events: auto;
 }
 
-.hover-container:hover img {
-    /* transform: scale(var(--hover-scale)); */
-    z-index:1;
-    filter: var(--drop-shadow);
-    border-radius: 0;
+#img-overlay img {
     max-width: 90vw;
     max-height: 90vh;
-    transition: var(--image-scale-anim);
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: var(--drop-shadow);
+    border-radius: 0;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.92);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#img-overlay.active img {
+    opacity: 1;
+    transform: scale(1);
 }
 
 @media only screen and (max-width:850px) {

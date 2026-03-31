@@ -1,22 +1,29 @@
+const overlay = document.getElementById('img-overlay');
+const overlayImg = document.getElementById('img-overlay-img');
+
 document.querySelectorAll('.hover-container').forEach(container => {
     const img = container.querySelector('img');
 
-    container.addEventListener('mouseenter', () => {
-        const rect = img.getBoundingClientRect();
+    container.addEventListener('click', (e) => {
+        e.stopPropagation();
 
-        const imgCenterX = rect.left + rect.width / 2;
-        const imgCenterY = rect.top + rect.height / 2;
+        const naturalW = img.naturalWidth;
+        const naturalH = img.naturalHeight;
 
-        const viewportCenterX = window.innerWidth / 2;
-        const viewportCenterY = window.innerHeight / 2;
+        const maxW = window.innerWidth * 0.9;
+        const maxH = window.innerHeight * 0.9;
 
-        const deltaX = viewportCenterX - imgCenterX;
-        const deltaY = viewportCenterY - imgCenterY;
+        const scale = Math.min(1, maxW / naturalW, maxH / naturalH);
 
-        img.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(var(--hover-scale))`;
+        overlayImg.src = img.src;
+        overlayImg.style.width = `${naturalW * scale}px`;
+        overlayImg.style.height = `${naturalH * scale}px`;
+
+        overlay.classList.add('active');
     });
+});
 
-    container.addEventListener('mouseleave', () => {
-        img.style.transform = '';
-    });
+overlay.addEventListener('click', () => {
+    overlay.classList.remove('active');
+    overlayImg.src = '';
 });

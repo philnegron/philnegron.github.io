@@ -97,10 +97,10 @@ width and makes life not miserable.
 			transition: var(--image-scale-anim);
 		}
 
-		.image-row img:hover {
+		/* .image-row img:hover {
 			transform: scale(3);
 			filter: var(--drop-shadow);
-		}
+		} */
 
 	.programs {
 	display:grid;
@@ -202,10 +202,10 @@ ODDFELLOWS X SONIC
     transition: var(--image-scale-anim);
 }
 
-	#oddfellows-sonic-logo:hover {
+	/* #oddfellows-sonic-logo:hover {
 		transform: scale(1.25);
 		z-index: 10;
-	}
+	} */
 
 #oddfellows-sonic-insert {
     height: auto;
@@ -214,10 +214,10 @@ ODDFELLOWS X SONIC
     transition: var(--image-scale-anim);
 }
 
-	#oddfellows-sonic-insert:hover {
+	/* #oddfellows-sonic-insert:hover {
 		transform: scale(1.25);
 		z-index: 10;
-	}
+	} */
 
 #oddfellows-sonic-tub-grid {
     display: grid;
@@ -234,10 +234,10 @@ ODDFELLOWS X SONIC
 		transition: var(--image-scale-anim);
 	}
 
-		#oddfellows-sonic-tub-grid img:hover {
+		/* #oddfellows-sonic-tub-grid img:hover {
 			transform: scale(1.25);
 			z-index: 10;
-		}
+		} */
 
 
 
