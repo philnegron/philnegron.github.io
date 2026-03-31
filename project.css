@@ -137,7 +137,7 @@ CONTENT: SECTIONS
 /* Remember: sections have 2% margin on top and bottom, so don't add margins on the top or bottom titles/paragraphs */
 
 .section {
-	margin: 2vmax 0;
+	margin: 1.5vmax 0;
 }
 
 .section-image-grid {
@@ -324,6 +324,10 @@ RESPONSIVE ELEMENTS
 	#oddfellows-sonic-merchandise-grid {
 		grid-template-rows: auto auto;
 	}
+
+		#oddfellows-sonic-merchandise-grid img {
+			margin: auto;
+		}
 
 	#oddfellows-sonic-packaging-grid {
 		grid-auto-flow: row;
