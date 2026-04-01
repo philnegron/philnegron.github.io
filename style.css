@@ -1,12 +1,34 @@
-:root {
-	--bg: #f4b844;
-	--light: #e84b17;
-	--med: #bf2413;
-	--dark: #801c1c;   
+:root { 
     --drop-shadow: drop-shadow(0 5px 5px rgba(0,0,0,0.65));
     --image-scale-anim: all 0.2s ease;
     --content-width: clamp(40rem, 50vmax, 100rem);
     --content-width-mobile: 90%;
+}
+
+:root[data-theme="default"] {
+    --bg: #f4b844;
+	--light: #e84b17;
+	--med: #bf2413;
+	--dark: #801c1c;
+    --copy: #801c1c; 
+}
+
+:root[data-theme="latenight"] {
+    --bg: #374068;
+	--med: #89c984 ;
+	--dark: #89c9ef;
+	--light: #ea7d7d;
+    --copy: #f9f8e1;   
+}
+
+:root[data-theme="inverted"] {
+    --bg: #483857;
+	--light: #c53b52;
+	--med: #e85845;
+	--dark: #df9859;
+    /* --copy: #efc199; */
+    --copy: #df9859;
+
 }
 
 /* --- Extra Light (100) --- */
@@ -101,7 +123,7 @@ body, html {
 	font-family: 'ITC Avant Garde Gothic Pro';
 	font-size: 1.12em;
 	overflow-x: hidden;
-	color: var(--dark);
+	color: var(--copy);
 }
 
 h1 {
@@ -120,9 +142,9 @@ h4 {
 	font-size: clamp(1.75rem, 4vh, 5rem);
 	font-weight: 400;
     text-transform: uppercase;
-	margin: 0;
+	margin: 3% 0;
 	letter-spacing: -.155rem;
-    line-height:90%;
+    line-height:3.5vmax;
 }
 
 p {
@@ -148,30 +170,57 @@ strong {
     font-style: italic;
 }
 
+.cls-1 {
+    fill: var(--dark);
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+
 /* ==================
-STICKY HOME BUTTON
+STICKY NAVBAR
 =====================*/
 
-.home-button a {
+.navbar a {
 	font-weight: 800;
     font-size: clamp(1rem, 1vw, 2rem);
-	color: var(--dark);
+	color: var(--copy);
+    line-height: 0;
+
 }
 
-.home-button a:hover {
+.navbar a:hover {
 	color: var(--med);
-}
+}   
 
-.home-button {
-    display: inline;
+.navbar {
+    display: flex;
+    align-items: center;
     position: sticky;
     overflow: visible;
     top:0;
     z-index: 9;
     align-self: center;
     width: var(--content-width);
-    padding: 1vh 100%;
+    padding: 1.5vh 100%;
     background-color: var(--bg);
+}
+
+.theme-selector {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-left: auto;
+}
+
+.theme-btn {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+    background-color: transparent;
 }
 
 /* ==================
@@ -181,6 +230,7 @@ HOVER CONTAINER LOGIC
 .hover-container {
     position: relative;
     cursor: pointer;
+    display: contents;
 }
 
 .hover-container img {
@@ -237,7 +287,7 @@ HOVER CONTAINER LOGIC
         transform:scale(var(--hover-scale-mobile));
     } */
 
-    .home-button {
+    .navbar {
         width: var(--content-width-mobile)
     }
     

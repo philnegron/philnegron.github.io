@@ -1,7 +1,6 @@
 .page-wrapper {
     display:flex;
     position: relative;
-	align-content: center;
 	justify-content: center;
     flex-direction: column;
 }
@@ -102,29 +101,30 @@ width and makes life not miserable.
 			filter: var(--drop-shadow);
 		} */
 
-	.programs {
-	display:grid;
-	padding: clamp(.5rem, .70vmax, 1.5rem);
-	gap: min(1rem, .75vmax);
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: auto; 
-	justify-content: end;
-	align-items: start;
-	/* border: clamp(.35rem, .425vmax, 1rem) var(--dark) solid; */
-	border: clamp(.25rem, .5vmax, .95rem) var(--dark) solid;
-	border-radius: min(2.5rem,1.75vmax);
-	height: fit-content;
+.programs {
+    display: grid;
+    padding: clamp(.5rem, .70vmax, 1.5rem);
+    gap: min(1rem, .75vmax);
+    grid-template-columns: repeat(2, min-content);
+    grid-template-rows: min-content;
+    justify-content: end;
+    align-items: center;
+    align-content: start;
+    border: clamp(.25rem, .5vmax, .95rem) var(--dark) solid;
+    border-radius: min(2.5rem,1.85vmax);
+    height: fit-content;
+}
+
+	.programs svg {
+		display: block;
+		justify-self: center;
+		align-self: center;
+		width: 7vmin;
+		height: 8vmin;
+		transition: var(--image-scale-anim);
 	}
 
-		.programs img {
-			justify-self: center;
-			align-self: center;
-			width: 6vmin;
-			height: auto;
-			transition: var(--image-scale-anim);
-		}
-
-		.programs img:hover {
+		.programs svg:hover {
 			transform: scale(1.1);
 		}
 
@@ -132,9 +132,8 @@ width and makes life not miserable.
 =====================
 CONTENT: SECTIONS
 =====================
+Remember: sections have 2% margin on top and bottom, so don't add margins on the top or bottom titles/paragraphs
 */
-
-/* Remember: sections have 2% margin on top and bottom, so don't add margins on the top or bottom titles/paragraphs */
 
 .section {
 	margin: 1.5vmax 0;
@@ -143,8 +142,9 @@ CONTENT: SECTIONS
 .section-image-grid {
 	display:grid;
 	margin: 2% 0;
-	align-items: center;
-	justify-items: center;
+    border: clamp(.25rem, .5vmax, .95rem) var(--dark) solid;
+    border-radius: min(2.5rem,1.75vmax);
+    padding: 2%;
 }
 
 	.section-image-grid img {
@@ -162,6 +162,7 @@ ODDFELLOWS X SONIC
 
 .genesis-bg-wrapper {
     background-color: #222;
+
     /* Grid */
     background-image: 
         linear-gradient(to right, #444 3%, transparent 3%),
@@ -178,8 +179,6 @@ ODDFELLOWS X SONIC
         background-position: 0 0;
     }
     to {
-        /* Negative values move the background UP and LEFT */
-        /* Must match background-size (40px) for a seamless loop */
         background-position: -60px -60px;
     }
 }
@@ -192,7 +191,6 @@ ODDFELLOWS X SONIC
     place-items: center;
     gap: 1vh;
     height: 100%;
-    padding: 1% 0;
 }
 
 #oddfellows-sonic-logo {
@@ -245,7 +243,7 @@ ODDFELLOWS X SONIC
 	display:grid;
 	grid-auto-flow: column;
 	grid-template-rows: auto auto;
-	gap: .5vw;
+	gap: 1vw;
 	place-items: center;
 }
 
@@ -288,17 +286,14 @@ ODDFELLOWS X SONIC
 	}
 
 #oddfellows-sonic-merchandise-grid {
-	display: grid;
 	grid-auto-flow: column;
-	grid-auto-columns: auto;
-	gap:3%;
 	place-items: center;
+	gap: 1vmax;
 }
 
 	#oddfellows-sonic-merchandise-grid img {
-		width:min(8rem,100%);
-		height:auto;
-		filter: drop-shadow(-.125rem .125rem 0 rgba(0,0,0,.50));
+		width: auto;
+		height: 15vmax;
 	}
 
 /*
@@ -346,5 +341,18 @@ RESPONSIVE ELEMENTS
 	.content, #oddfellows-sonic-banner-grid {
 		width: var(--content-width-mobile);
 	}
+
+	#oddfellows-sonic-merchandise-grid {
+	grid-template-columns: repeat(2, auto);
+	place-items: center;
+	row-gap: 5vmax;
+	padding: 2vmax;
+	}
+
+	#oddfellows-sonic-merchandise-grid img {
+		width: auto;
+		height: clamp(8rem, 5vmin, 10rem);
+	}
+
 }
 

@@ -48,3 +48,15 @@ overlay.addEventListener('click', () => {
         activeImg = null;
     }, { once: true });
 });
+
+// On load, apply saved theme (or default to "default")
+const savedTheme = localStorage.getItem('theme') || 'default';
+document.documentElement.dataset.theme = savedTheme;
+
+document.querySelectorAll('.theme-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const theme = btn.dataset.theme;
+        document.documentElement.dataset.theme = theme;
+        localStorage.setItem('theme', theme);
+    });
+});
