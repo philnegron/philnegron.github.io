@@ -223,3 +223,14 @@ STICKY NAVBAR
     background-color: transparent;
 }
 
+@media only screen and (max-width:850px) {
+
+    /* .hover-container:hover img {
+        transform:scale(var(--hover-scale-mobile));
+    } */
+
+    .navbar {
+        width: var(--content-width-mobile)
+    }
+    
+}
