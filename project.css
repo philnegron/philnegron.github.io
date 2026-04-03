@@ -93,6 +93,10 @@ Images can be clicked on and will expand to the center of the screen from their 
     transform: scale(1);
 }
 
+img:hover {
+    transform: scale(1.1);
+}
+
 /*
 =====================
 HEADER / BANNER
@@ -162,13 +166,13 @@ Was 2 rows and 2 columns, but that made it difficult to actually scale elements 
 .programs {
     display: grid;
     padding: clamp(.55rem, .55vmax, 1.5rem);
-    gap: min(.5rem, .75vmax);
+    gap: min(.5rem, .75vh);
     grid-template-columns: repeat(2, min-content);
     grid-template-rows: min-content;
     justify-content: end;
     align-items: center;
     align-content: start;
-    border: clamp(.35rem, .35vmax, .95rem) var(--dark) solid;
+    border: clamp(.25rem, .55vh, .95rem) var(--dark) solid;
     border-radius: 2vh;
     height: fit-content;
 }
@@ -368,11 +372,12 @@ RESPONSIVE ELEMENTS
 		grid-template-columns: auto;
 		width:fit-content;
 		justify-self: end;
+
 	}
 
 		.programs svg {
-			width: 5vmax;
-			height: 6vmax;
+			width: 6vmax;
+			height: 7vmax;
 		}
 
 	#oddfellows-sonic-merchandise-grid {

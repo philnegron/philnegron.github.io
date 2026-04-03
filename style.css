@@ -26,7 +26,6 @@
 	--light: #c53b52;
 	--med: #e85845;
 	--dark: #df9859;
-    /* --copy: #efc199; */
     --copy: #df9859;
 
 }
@@ -172,10 +171,6 @@ strong {
 
 .cls-1 {
     fill: var(--dark);
-}
-
-img:hover {
-    transform: scale(1.1);
 }
 
 /* ==================
