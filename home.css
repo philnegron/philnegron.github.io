@@ -29,22 +29,32 @@
     .project-link {
         display: block;
     }
+    
+    .project-link image {
+        filter: grayscale(100%);
+        transition: all 0.5 ease;
+    }
 
     .project-link svg.project-frame {
         width: 100%;
         height: auto;
         display: block;
-        transition: opacity 0.2s ease;
+        transition: all 0.2s ease;
     }
 
 .frame-overlay {
     fill: var(--dark);
-    opacity: 0.8;
+    mix-blend-mode: color;
+    opacity: 1;
     transition: opacity 0.3s ease;
 }
 
     .project-link:hover .frame-overlay {
         opacity: 0;
+    }
+
+    .project-link:hover image {
+        filter:grayscale(0);
     }
 
 .top-row {
@@ -65,7 +75,7 @@
         align-items: center;
         justify-items: center;
         /* row-gap: clamp(1rem, 6vmax, 8rem); */
-        row-gap: 6vmax;
+        row-gap: 5.5vmax;
         translate: 0 .5vmax;
     }
 
@@ -92,7 +102,21 @@
             font-size: clamp(1.25rem, 1.75vw, 5rem);
             letter-spacing: -5%;
             padding: 0 1vw;
+            opacity: 0;
+            animation-delay: 0.5;
+	        animation: fadeIn .5s ease-in forwards;
         }
+
+        @keyframes fadeIn {
+            0% {
+                translate: 0% 75%;
+                opacity: 0;
+            }
+            100% {
+                translate: 0% 150%;
+                opacity: 1;
+        }
+    }
 
         .nav-links a:hover {
             color: var(--med);
@@ -150,4 +174,22 @@
 
 .str3 {
 	fill: var(--med);
+}
+
+@media only screen and (max-width:500px) {
+    
+    .project-links {
+        display:grid;
+        grid-template-rows: auto auto;
+    }
+
+    .nav {
+        translate: 0 2vmax;        
+    }
+
+        .nav-links {
+            display:grid;
+            grid-auto-flow: row;
+            place-items: center;
+        }
 }
