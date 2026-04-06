@@ -4,6 +4,9 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+    
+    /* If I don't rotate the whole fucking page slightly, the stripes won't extend properly. No, this doesn't make sense, and I should fix this, but I can't be fucked right now. */
+    transform: rotate(.015deg);
 }
 
 .content {
@@ -14,37 +17,41 @@
         'projects-bottom projects-bottom';
     place-items: center;
     gap: 5vh;
-    width: var(--content-width);
+    width: 80vmin;
     margin: 0 10vw;
 }
 
+/*
+=====================
+PROJECT FRAMES
+=====================
+*/
+
+/* Frames are in top and bottom grids within the main grid */
 .project-links {
     display:grid;
     grid-auto-flow: column;
     grid-auto-columns: auto;
-    gap: 1.25vmax;
-    width: 100%;
+    gap: 1.5vmax;
+    width: 105%;
 }
 
     .project-link {
         display: block;
-    }
-    
-    .project-link image {
-        filter: grayscale(100%);
-        transition: all 0.5 ease;
     }
 
     .project-link svg.project-frame {
         width: 100%;
         height: auto;
         display: block;
-        transition: all 0.2s ease;
+        transition: all 0.3s ease;
     }
 
+/* Thumbnail image is a grayscale halftone version, blended using the current theme's light color variable */
+
 .frame-overlay {
-    fill: var(--dark);
-    mix-blend-mode: color;
+    fill: var(--med);
+    mix-blend-mode: lighten;
     opacity: 1;
     transition: opacity 0.3s ease;
 }
@@ -53,12 +60,33 @@
         opacity: 0;
     }
 
-    .project-link:hover image {
-        filter:grayscale(0);
+/* Image is swapped to a non halftone, full-color version on hover */
+
+.img-default,
+.img-hover {
+    transition: opacity 0.3s ease;
+}
+
+.img-hover {
+    opacity: 0;
+}
+
+    .project-link:hover .img-hover {
+        opacity: 1;
     }
+
 
 .top-row {
     grid-area: projects-top;
+    opacity:0;
+    animation: fadeInTop .5s ease .75s forwards;
+
+}
+
+.bottom-row {
+    grid-area: projects-bottom;
+    opacity:0;
+    animation: fadeInProjects .5s ease .75s forwards;
 }
 
 .main-navigation {
@@ -67,7 +95,7 @@
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     justify-content: center;
-    width:100%;
+    width: 80vmin;
 }
 
     .nav {
@@ -75,8 +103,8 @@
         align-items: center;
         justify-items: center;
         /* row-gap: clamp(1rem, 6vmax, 8rem); */
-        row-gap: 5.5vmax;
-        translate: 0 .5vmax;
+        gap: 7.5vmin;
+        translate: 0 0.75vmin;
     }
 
         .logo svg {
@@ -96,27 +124,61 @@
                 height: clamp(1rem, 1.25vmax, 3rem);
             }
     
+
+        /* Main navigation animations: fade in and move into place */
+        .nav-links {
+            opacity: 0;
+            animation: fadeInBottom .5s ease .5s forwards;
+        }
+
+        .theme-selector {
+            opacity:0;
+            animation: fadeInTop .5s ease .5s forwards;
+        }
+
+        @keyframes fadeInTop {
+            0% {
+                opacity: 0;
+                translate: 0% 2vh;
+
+            }
+            100% {
+                translate: 0% 0vh;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInBottom {
+            0% {
+                opacity: 0;
+                translate: 0% -2vh;
+
+            }
+            100% {
+                translate: 0% 0vh;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInProjects {
+            0% {
+                opacity: 0;
+                translate: 0% -2vh;
+
+            }
+            100% {
+                translate: 0% 0vh;
+                opacity: 1;
+            }
+        }
+        
         .nav-links a {
             color: var(--dark);
             font-weight: 600;
             font-size: clamp(1.25rem, 1.75vw, 5rem);
             letter-spacing: -5%;
             padding: 0 1vw;
-            opacity: 0;
-            animation-delay: 0.5;
-	        animation: fadeIn .5s ease-in forwards;
         }
-
-        @keyframes fadeIn {
-            0% {
-                translate: 0% 75%;
-                opacity: 0;
-            }
-            100% {
-                translate: 0% 150%;
-                opacity: 1;
-        }
-    }
 
         .nav-links a:hover {
             color: var(--med);
@@ -141,10 +203,6 @@
             transform: scaleX(100);
         }
         }
-
-.bottom-row {
-    grid-area: projects-bottom;
-}
 
 /* SVG Logo Attributes */
 .st0 {
@@ -178,18 +236,32 @@
 
 @media only screen and (max-width:500px) {
     
-    .project-links {
-        display:grid;
-        grid-template-rows: auto auto;
+    .main-navigation {
+        grid-template-columns: 3fr auto;
+        gap: 5vw;
     }
 
-    .nav {
-        translate: 0 2vmax;        
-    }
 
-        .nav-links {
+        .project-links {
             display:grid;
-            grid-auto-flow: row;
-            place-items: center;
+            grid-template-rows: auto auto;
         }
+
+        .nav {
+            translate: 0 3vmin;
+            gap: 10vmin;
+            /* justify-items: end;         */
+        }
+
+            .nav-links {
+                display:grid;
+                grid-auto-flow: row;
+                place-items: center;
+            }
+
+                .nav-links a{
+                    font-size: 1rem;
+                }
+
+
 }
