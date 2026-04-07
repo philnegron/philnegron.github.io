@@ -17,7 +17,8 @@ GLOBAL VARIABLE DEFINITIONS & THEME COLORS
 	--med: #bf2413;
 	--dark: #801c1c;
     --copy: var(--dark); 
-    --frame: var(--med);
+    --over: var(--med);
+    --under: var(--bg);
 }
 
 :root[data-theme="latenight"] {
@@ -26,7 +27,8 @@ GLOBAL VARIABLE DEFINITIONS & THEME COLORS
 	--dark: #c2e285;
 	--light: #4caa86;
     --copy: #ffefc2;
-    --frame: var(--light);
+    --over: var(--bg);
+    --under: var(--dark);
 }
 
 :root[data-theme="inverted"] {
@@ -35,7 +37,8 @@ GLOBAL VARIABLE DEFINITIONS & THEME COLORS
 	--med: #e85845;
 	--dark: #df9859;
     --copy: var(--dark);
-    --frame: var(--light);
+    --over: var(--bg);
+    --under: var(--dark);
 }
 
 /*

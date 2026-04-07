@@ -21,6 +21,10 @@
     margin: 0 10vw;
 }
 
+img {
+    filter: brightness(0) saturate(100%) invert(26%) sepia(72%) saturate(5537%) hue-rotate(0deg) brightness(100%) contrast(108%);
+}
+
 /*
 =====================
 PROJECT FRAMES
@@ -49,9 +53,13 @@ PROJECT FRAMES
 
 /* Thumbnail image is a grayscale halftone version, blended using the current theme's light color variable */
 
+.frame-underlay {
+    fill: var(--under);
+}
+
 .frame-overlay {
-    fill: var(--frame);
-    mix-blend-mode: screen;
+    fill: var(--over);
+    mix-blend-mode: lighten;
     opacity: 1;
     transition: opacity 0.3s ease;
 }
