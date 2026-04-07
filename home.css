@@ -50,8 +50,8 @@ PROJECT FRAMES
 /* Thumbnail image is a grayscale halftone version, blended using the current theme's light color variable */
 
 .frame-overlay {
-    fill: var(--med);
-    mix-blend-mode: lighten;
+    fill: var(--frame);
+    mix-blend-mode: screen;
     opacity: 1;
     transition: opacity 0.3s ease;
 }
@@ -88,6 +88,12 @@ PROJECT FRAMES
     opacity:0;
     animation: fadeInProjects .5s ease .75s forwards;
 }
+
+/*
+=====================
+MAIN LOGO AND EXTERNAL LINKS
+=====================
+*/
 
 .main-navigation {
     grid-area: navigation;

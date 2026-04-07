@@ -1,3 +1,9 @@
+/*
+==================
+GLOBAL VARIABLE DEFINITIONS & THEME COLORS
+==================
+*/
+
 :root { 
     --drop-shadow: drop-shadow(0 5px 5px rgba(0,0,0,0.65));
     --image-scale-anim: all 0.2s ease;
@@ -10,15 +16,17 @@
 	--light: #e84b17;
 	--med: #bf2413;
 	--dark: #801c1c;
-    --copy: #801c1c; 
+    --copy: var(--dark); 
+    --frame: var(--med);
 }
 
 :root[data-theme="latenight"] {
     --bg: #374068;
-	--med: #89c984 ;
-	--dark: #89c9ef;
-	--light: #ea7d7d;
-    --copy: #f9f8e1;   
+	--med: #84c77f;
+	--dark: #c2e285;
+	--light: #4caa86;
+    --copy: #ffefc2;
+    --frame: var(--light);
 }
 
 :root[data-theme="inverted"] {
@@ -26,9 +34,35 @@
 	--light: #c53b52;
 	--med: #e85845;
 	--dark: #df9859;
-    --copy: #df9859;
-
+    --copy: var(--dark);
+    --frame: var(--light);
 }
+
+/*
+==================
+THEME SELECTOR COLORS
+
+These values have to be hardcoded to be persistent across all themes
+==================
+*/
+
+.theme-btn[data-theme="default"] {
+    background-color: #bf2413;
+}
+
+.theme-btn[data-theme="latenight"] {
+    background-color: #4caa86;
+}
+
+.theme-btn[data-theme="inverted"] {
+    background-color: #c53b52;
+}
+
+/*
+==================
+FONT LOADING
+==================
+*/
 
 /* --- Extra Light (100) --- */
 @font-face {
@@ -141,7 +175,7 @@ h4 {
 	font-size: clamp(1.75rem, 4vh, 5rem);
 	font-weight: 400;
     text-transform: uppercase;
-	margin: 3% 0;
+	margin: 2% 0;
 	letter-spacing: -.155rem;
     line-height:3.5vmax;
 }
