@@ -6,7 +6,7 @@
 	justify-content: center;
     
     /* If I don't rotate the whole fucking page slightly, the stripes won't extend properly. No, this doesn't make sense, and I should fix this, but I can't be fucked right now. */
-    transform: rotate(.015deg);
+    transform: rotate(-.015deg);
 }
 
 .content {
@@ -35,7 +35,7 @@ PROJECT FRAMES
 .project-links {
     display:grid;
     grid-auto-flow: column;
-    grid-auto-columns: auto;
+    grid-auto-columns: 1fr;
     gap: 1.5vmax;
     width: 105%;
 }
@@ -49,6 +49,20 @@ PROJECT FRAMES
         height: auto;
         display: block;
         transition: all 0.3s ease;
+    }
+
+    .project-link p {
+        text-align: center;
+        text-transform: uppercase;
+        color: var(--copy);
+        padding: 1vh 0;
+        opacity: 0;
+        transition: all 0.2s ease;
+        line-height: 100%;
+    }
+    
+    .project-link:hover p {
+        opacity: 1;
     }
 
 /* Thumbnail image is a grayscale halftone version, blended using the current theme's light color variable */
@@ -87,6 +101,7 @@ PROJECT FRAMES
 .top-row {
     grid-area: projects-top;
     opacity:0;
+    align-items: end;
     animation: fadeInTop .5s ease .75s forwards;
 
 }
@@ -94,7 +109,8 @@ PROJECT FRAMES
 .bottom-row {
     grid-area: projects-bottom;
     opacity:0;
-    animation: fadeInProjects .5s ease .75s forwards;
+    align-items: start;
+    animation: fadeInBottom .5s ease .75s forwards;
 }
 
 /*
@@ -173,18 +189,6 @@ MAIN LOGO AND EXTERNAL LINKS
                 opacity: 1;
             }
         }
-
-        @keyframes fadeInProjects {
-            0% {
-                opacity: 0;
-                translate: 0% -2vh;
-
-            }
-            100% {
-                translate: 0% 0vh;
-                opacity: 1;
-            }
-        }
         
         .nav-links a {
             color: var(--dark);
@@ -248,6 +252,10 @@ MAIN LOGO AND EXTERNAL LINKS
 	fill: var(--med);
 }
 
+#img-overlay {
+    display:none;
+}
+
 @media only screen and (max-width:500px) {
     
     .main-navigation {
@@ -259,6 +267,7 @@ MAIN LOGO AND EXTERNAL LINKS
         .project-links {
             display:grid;
             grid-template-rows: auto auto;
+            width:90%;
         }
 
         .nav {
