@@ -41,14 +41,14 @@ PROJECT FRAMES
 }
 
     .project-link {
-        display: block;
+        display: grid;
     }
 
     .project-link svg.project-frame {
         width: 100%;
         height: auto;
-        display: block;
         transition: all 0.3s ease;
+        grid-area: frame;
     }
 
     .project-link p {
@@ -59,11 +59,24 @@ PROJECT FRAMES
         opacity: 0;
         transition: all 0.2s ease;
         line-height: 100%;
+        grid-area: label;
     }
     
     .project-link:hover p {
         opacity: 1;
     }
+
+.top-row .project-link {
+    grid-template-areas: 
+        'label'
+        'frame';
+}
+
+.bottom-row .project-link {
+    grid-template-areas: 
+        'frame'
+        'label';  
+}
 
 /* Thumbnail image is a grayscale halftone version, blended using the current theme's light color variable */
 
@@ -103,7 +116,6 @@ PROJECT FRAMES
     opacity:0;
     align-items: end;
     animation: fadeInTop .5s ease .75s forwards;
-
 }
 
 .bottom-row {
@@ -132,7 +144,6 @@ MAIN LOGO AND EXTERNAL LINKS
         display:grid;
         align-items: center;
         justify-items: center;
-        /* row-gap: clamp(1rem, 6vmax, 8rem); */
         gap: 7.5vmin;
         translate: 0 0.75vmin;
     }
@@ -263,11 +274,15 @@ MAIN LOGO AND EXTERNAL LINKS
         gap: 5vw;
     }
 
-
         .project-links {
             display:grid;
-            grid-template-rows: auto auto;
+            grid-template-rows: 1fr 1fr;
             width:90%;
+            gap: 2vmax;
+        }
+
+        .project-links p {
+            display: none;
         }
 
         .nav {
