@@ -1,13 +1,14 @@
 const overlay = document.getElementById('img-overlay');
 let activeImg = null;
+let isOpening = false;
 
 document.querySelectorAll('.hover-container').forEach(container => {
     const img = container.querySelector('img');
 
-    container.addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (activeImg) return; // prevent double-clicks during animation
+    container.addEventListener('click', () => {
+        if (activeImg) return;
 
+        isOpening = true;
         activeImg = img;
 
         const naturalW = img.naturalWidth;
@@ -21,8 +22,6 @@ document.querySelectorAll('.hover-container').forEach(container => {
         const imgCenterY = rect.top + rect.height / 2;
         const deltaX = window.innerWidth / 2 - imgCenterX;
         const deltaY = window.innerHeight / 2 - imgCenterY;
-
-        // Calculate scale relative to current rendered size
         const renderScale = (naturalH * scale) / rect.height;
 
         img.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(${renderScale})`;
@@ -31,12 +30,14 @@ document.querySelectorAll('.hover-container').forEach(container => {
         img.style.borderRadius = '0';
 
         overlay.classList.add('active');
-        
+
+        // Allow the document listener to respond after this click has fully resolved
+        requestAnimationFrame(() => { isOpening = false; });
     });
 });
 
-overlay.addEventListener('click', () => {
-    if (!activeImg) return;
+document.addEventListener('click', () => {
+    if (isOpening || !activeImg) return;
 
     overlay.classList.remove('active');
     activeImg.style.transform = '';

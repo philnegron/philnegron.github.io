@@ -26,7 +26,7 @@ GLOBAL VARIABLE DEFINITIONS & THEME COLORS
 	--med: #84c77f;
 	--dark: #c2e285;
 	--light: #4caa86;
-    --copy: #ffefc2;
+    --copy: #e6d689;
     --over: var(--bg);
     --under: var(--dark);
 }
@@ -183,6 +183,16 @@ h4 {
     line-height:3.5vmax;
 }
 
+h5 {
+    position: relative;
+    font-size: clamp(1rem, 2.25vh, 5rem);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: -.075rem;
+    margin: 0 1vh 2vh 0;
+}
+
+
 p {
     font-weight: 500;
     font-size: clamp(.75rem, .75vmax, 2rem);
@@ -208,6 +218,12 @@ strong {
 
 .cls-1 {
     fill: var(--dark);
+}
+
+.divider {
+    background: var(--dark);
+    height:100%;
+    width:3px;
 }
 
 /* ==================
