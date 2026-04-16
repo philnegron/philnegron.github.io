@@ -8,7 +8,6 @@ GLOBAL VARIABLE DEFINITIONS & THEME COLORS
     --drop-shadow: drop-shadow(0 5px 5px rgba(0,0,0,0.65));
     --image-scale-anim: all 0.2s ease;
     --content-width: clamp(40rem, 50vmax, 100rem);
-    --content-width-mobile: 90%;
 }
 
 :root[data-theme="default"] {
@@ -277,8 +276,12 @@ STICKY NAVBAR
         transform:scale(var(--hover-scale-mobile));
     } */
 
-    .navbar {
+    :root {
+    --content-width: 90%;
+        }
+
+    /* .navbar {
         width: var(--content-width-mobile)
-    }
+    } */
     
 }

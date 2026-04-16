@@ -370,10 +370,8 @@ ODDFELLOWS X SONIC
 
 
 .insert {
-	/* grid-template-areas:
-		'insert insert'
-		'side side'; */
-	grid-template-columns: 1fr 2fr 2fr 1fr;
+	grid-template-areas: 
+		'fr-text front back ba-text';
 	align-items: center;
 	justify-content: center;
 	gap: 2vh;
@@ -381,21 +379,6 @@ ODDFELLOWS X SONIC
 	text-align: center;
 	height:100%;
 }
-
-	/* Removing h5 margin here because it adds a huge gap otherwise */
-	.insert p {
-		margin: 0;
-		text-transform: uppercase;
-		font-size: 100%;
-	}
-
-	.side-a, .side-b {
-		grid-area: insert;
-	}
-
-	.side-a-text, .side-b-text {
-		grid-area: side;
-	}
 
 #oddfellows-sonic-comparison-grid {
 	display: grid;
@@ -412,21 +395,43 @@ ODDFELLOWS X SONIC
 		width:auto;
 		height:clamp(2rem, 4.25vmax, 15rem);
 		border-radius:0%;
-		transition: var(--image-scale-anim);
 	}
+	
+	/* Removing h5 margin here because it adds a huge gap otherwise */
+	.insert h5 {
+		margin: .5vmax;
+	}
+
+	.front {
+		grid-area: front;
+	}
+
+	.back {
+		grid-area: back;
+	}
+
+	.fr-text {
+		grid-area: fr-text;
+	}
+
+	.ba-text {
+		grid-area: ba-text;
+	}
+
+
 
 /* Reference image grid for Sonic artwork, within full-width wrapper, follows full-width-grid */
 .references {
 	grid-auto-flow: column;
 	align-items: center;
-	justify-content: center;
-	gap: 5vw;
-	padding: 1vw 0;
+	justify-content: space-evenly;
+	gap: 2vmax;
+	padding: 1vmax 0;
 }
 
 	.references img {
 		width: auto;
-		height: 25vh;
+		height: clamp(2rem, 15vmax, 45rem);
 	}
 
 #oddfellows-sonic-merchandise-grid {
@@ -524,13 +529,25 @@ RESPONSIVE ELEMENTS
 		width:100%;
 	}
 
-	.image-row {
+	.press {
 		grid-template-rows: 1fr 1fr;
 	}
-	
-	.content, #oddfellows-sonic-banner-grid {
-		width: var(--content-width-mobile);
+
+	.tub-labels {
+		grid-template-columns: 1fr;
 	}
+
+	.insert {
+		grid-template-columns: unset;
+		grid-template-areas: 
+			'front back'
+			'fr-text ba-text';
+	}
+
+	/* .references {
+		grid-template-rows: 20vh;
+	} */
+	
 
 	#oddfellows-sonic-merchandise-grid {
 	grid-template-columns: repeat(2, auto);
@@ -567,6 +584,10 @@ RESPONSIVE ELEMENTS
 	.divider {
 		height: 4px;
 		width: 100%;
+	}
+
+	.sonic-social {
+		grid-template-columns: 1fr;
 	}
 
 }
