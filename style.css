@@ -270,6 +270,27 @@ STICKY NAVBAR
     background-color: transparent;
 }
 
+/* 
+======================
+3D model viewer logic
+======================
+*/
+
+#model-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.model-viewer {
+    aspect-ratio: 1;
+    width: 100%;
+}
+
+.model-viewer canvas {
+    display: block;
+}
+
 @media only screen and (max-width:850px) {
 
     /* .hover-container:hover img {

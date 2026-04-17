@@ -9,6 +9,17 @@
     </script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="project.css">
+    
+    <!-- three.js importmap + module viewer -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
+    <script type="module" src="viewers.js"></script>
 </head>
 <body class="project-page">
     <!-- This div just for organization! -->
@@ -235,11 +246,11 @@
             </div>
             <div class="section" id="oddfellows-sonic-merchandise">
                 <h4>Merchandise & Apparel</h4>
-                <div class="section-image-grid" id="oddfellows-sonic-merchandise-grid">
-                    <div class="hover-container"><img src="assets/sonic/merch/oddfellows-sonic-merch-1.webp"></div>
-                    <div class="hover-container"><img src="assets/sonic/merch/oddfellows-sonic-merch-5.png"></div>
-                    <div class="hover-container"><img src="assets/sonic/merch/oddfellows-sonic-merch-3.webp"></div>
-                    <div class="hover-container"><img src="assets/sonic/merch/oddfellows-sonic-merch-2.webp"></div>
+                <div class="section-image-grid merch">
+                    <div class="hover-container"><img src="assets/sonic/merch/oddfellows-sonic-merch-1.jpg"></div>
+                    <div class="hover-container"><img src="assets/sonic/merch/oddfellows-sonic-merch-5.jpg"></div>
+                    <div class="hover-container"><img src="assets/sonic/merch/oddfellows-sonic-merch-3.jpg"></div>
+                    <div class="hover-container"><img src="assets/sonic/merch/oddfellows-sonic-merch-2.jpg"></div>
                 </div>
             </div>
             <div class="section" id="oddfellows-sonic-storefront">
@@ -257,24 +268,22 @@
                 </div>
                 <h5 class="descriptor">Floor Vinyl Decals</h5>
                 <div class="section-image-grid mirror">
-                    <div class="selfie">
-                        <div class="hover-container"><img src="assets/sonic/storefront/oddfellows-sonic-storefront-4.webp"></div>
-                        <div class="hover-container"><img src="assets/sonic/storefront/oddfellows-sonic-storefront-5.webp"></div>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="ring-chase hover-container"><img src="assets/sonic/storefront/oddfellows-sonic-storefront-6.webp"></div>
+                    <div class="hover-container selfie"><img src="assets/sonic/storefront/oddfellows-sonic-storefront-4.webp"></div>
+                    <div class="hover-container selfie-text"><img src="assets/sonic/storefront/oddfellows-sonic-storefront-5.webp"></div>
+                    <div class="divider decal"></div>
+                    <div class="hover-container ring-chase"><img src="assets/sonic/storefront/oddfellows-sonic-storefront-6.webp"></div>
                 </div>
                 <h5 class="descriptor">Mirror Vinyl Decals</h5>
             </div>
             <div class="section" id="oddfellows-sonic-social-media">
                 <h4>Social Media Rollout</h4>
                 <div class="section-image-grid insta-grid">
-                    <img src="assets/sonic/social/grid-1.png">
-                    <img src="assets/sonic/social/grid-2.png">
-                    <img src="assets/sonic/social/grid-3.png">
-                    <img src="assets/sonic/social/grid-4.png">
-                    <img src="assets/sonic/social/grid-5.png">
-                    <img src="assets/sonic/social/grid-6.png">
+                    <div class="hover-container"><img src="assets/sonic/social/grid-1.png"></div>
+                    <div class="hover-container"><img src="assets/sonic/social/grid-2.png"></div>
+                    <div class="hover-container"><img src="assets/sonic/social/grid-3.png"></div>
+                    <div class="hover-container"><img src="assets/sonic/social/grid-4.png"></div>
+                    <div class="hover-container"><img src="assets/sonic/social/grid-5.png"></div>
+                    <div class="hover-container"><img src="assets/sonic/social/grid-6.png"></div>
                 </div>
                 <h5 class="descriptor">Instagram Grid Post Mosaic</h5>
                 <p>
@@ -297,9 +306,16 @@
                             <source src="assets/sonic/social/oddfellows-sonic-production-ghp.mp4" type="video/mp4">
                         </video>
                     </div>
-                    <h5 class="descriptor">Announcement</h5>
-                    <h5 class="descriptor">Production & Scooping Promo Videos</h5>
+                    <h5 class="descriptor announce-text">Announcement Video</h5>
+                    <h5 class="descriptor provideo-text">Production & Scooping Promo Videos</h5>
                 </div>
+                <!-- <div class="full-width genesis tub-models" id="model-grid">
+                    <div class="model-viewer" data-model="assets/sonic/models/oddfellows-sonic-tub-ghp.glb"></div>
+                    <div class="model-viewer" data-model="assets/sonic/models/oddfellows-sonic-tub-ghp.glb"></div>
+                    <div class="model-viewer" data-model="assets/sonic/models/oddfellows-sonic-tub-ghp.glb"></div>
+                    <div class="model-viewer" data-model="assets/sonic/models/oddfellows-sonic-tub-ghp.glb"></div>
+                </div> -->
+                <!-- Commit has above section commented out. In the middle of updating models to Principled BSDF shaders, then exporting to glb and embedding here. Then, fix the grid layout. Check to see if there's a way to load these models on a click instead of automatically. Test on mobile -->
             </div>
         </div>
     <div id="img-overlay" aria-hidden="true">
