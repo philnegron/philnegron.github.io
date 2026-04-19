@@ -531,9 +531,11 @@ ODDFELLOWS X SONIC
 	}
 
 .tub-models {
+	display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.5vw;
-    padding: 1.5vw;
+    column-gap: 1vh;
+	width: var(--content-width);
+	margin: 0 auto;
 }
 
 	.model-viewer {
@@ -639,6 +641,12 @@ RESPONSIVE ELEMENTS
 		'bts'
 		'provideo-text';	
 		grid-template-columns: unset;
+	}
+
+	.tub-models {
+		grid-template-columns: repeat(2, 1fr);
+   		gap: 0;
+		width: 100%;
 	}
 
 }

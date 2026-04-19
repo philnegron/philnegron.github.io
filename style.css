@@ -276,11 +276,7 @@ STICKY NAVBAR
 ======================
 */
 
-#model-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-}
+
 
 .model-viewer {
     aspect-ratio: 1;

@@ -7,22 +7,24 @@ function initViewer(container) {
 
     const scene = new THREE.Scene();
 
-    const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
+    const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 100);
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.0; // lower this (e.g. 0.6) to darken further
     container.appendChild(renderer.domElement);
 
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.05;
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 1);
-    scene.add(ambientLight);
-    const dirLight = new THREE.DirectionalLight(0xffffff, 2);
-    dirLight.position.set(5, 5, 5);
-    scene.add(dirLight);
+    // const ambientLight = new THREE.AmbientLight(0xffffff, 1);
+    // scene.add(ambientLight);
+    // const dirLight = new THREE.DirectionalLight(0xffffff, 2);
+    // dirLight.position.set(5, 5, 5);
+    // scene.add(dirLight);
 
     const loader = new GLTFLoader();
     loader.load(modelPath, (gltf) => {
