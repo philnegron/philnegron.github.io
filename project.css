@@ -534,8 +534,12 @@ ODDFELLOWS X SONIC
 	display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 1vh;
+<<<<<<< HEAD
 	width: var(--content-width);
 	margin: 0 auto;
+=======
+	width: max(40rem, 60%);
+>>>>>>> bb4a3b6 (Rebasing because of a fucking JSON file)
 }
 
 	.model-viewer {
