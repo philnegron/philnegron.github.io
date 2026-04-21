@@ -1,3 +1,4 @@
 {
-    "livePreview.defaultPreviewPath": "/sonic.html"
+    "livePreview.defaultPreviewPath": "/sonic.html",
+    "livePreview.autoRefreshPreview": "On Changes to Saved Files"
 }

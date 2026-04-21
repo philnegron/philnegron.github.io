@@ -45,16 +45,16 @@ Images can be clicked on and will expand to the center of the screen from their 
     display: contents;
 }
 
-.hover-container img {
-    display: block;
-    pointer-events: auto;
-    transition: var(--image-scale-anim);
-}
+	.hover-container img {
+		display: block;
+		pointer-events: auto;
+		transition: var(--image-scale-anim);
+	}
 
-.hover-container:has(img[style*="z-index"]) {
-    z-index: 9999;
-    position: relative;
-}
+	.hover-container:has(img[style*="z-index"]) {
+		z-index: 9999;
+		position: relative;
+	}
 
 #img-overlay {
     display: flex;
@@ -64,13 +64,16 @@ Images can be clicked on and will expand to the center of the screen from their 
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0);
+    /* background-color: rgba(0, 0, 0, 0); */
+	background-color: var(--bg);
+	opacity: 0;
     transition: var(--image-scale-anim);
     pointer-events: none;
 }
 
 #img-overlay.active {
-    background-color: rgba(0, 0, 0, 0.65);
+    background-color: var(--bg);
+	opacity: 80%;
     pointer-events: auto;
 }
 
@@ -103,28 +106,16 @@ img {
 
 /*
 =====================
-HEADER / BANNER
-=====================
-*/
-
-.header {
-    width: var(--content-width);
-    margin: 0 auto;
-    position: relative;
-}
-
-/*
-=====================
 CONTENT: SECTIONS
 =====================
 Remember: sections have 2% margin on top and bottom, so don't add margins on the top or bottom titles/paragraphs
 */
 
-.section {
+section {
 	margin: 1.5vmax 0;
 }
 
-.section-image-grid {
+.showcase-grid {
 	display: grid;
 	margin: 1vmax 0;
     border: clamp(.25rem, .5vmax, .95rem) var(--dark) solid;
@@ -132,7 +123,7 @@ Remember: sections have 2% margin on top and bottom, so don't add margins on the
     padding: .75vmax;
 }
 
-	.section-image-grid img, video {
+	.showcase-grid img, video {
 		width: 100%;
 		height: auto;
 		object-fit: cover;
@@ -533,7 +524,7 @@ ODDFELLOWS X SONIC
 .tub-models {
     grid-template-columns: repeat(4, 1fr);
     column-gap: 1vh;
-	width: max(40rem, 60%);
+	width: 100vmin;
 }
 
 	.model-viewer {
@@ -547,7 +538,76 @@ ODDFELLOWS X SONIC
 		display: block;
 	}
 
+.early-logos {
+	grid-auto-flow: column;
+	align-items: center;
+	justify-content: center;
+	gap: 2vmax;
+	padding: 2vmax;
+}
 
+footer {
+	display: grid;
+	/* grid-template-columns: 1fr 1fr; */
+	grid-template-areas: 
+		'logo space'
+		'logo nav';
+	grid-template-rows: 7.5vh auto;
+	/* row-gap: 1.5rem; */
+	align-items: center;
+	margin-bottom: 5vh;
+	margin-top: 1vh;
+}
+
+	.logo {
+		grid-area: logo;
+	}
+
+	.logo svg{
+		width: 25vh;
+		overflow: visible;
+	}
+
+        .l-rects rect {
+            transform-box: fill-box;
+            transform-origin: right center;
+            transform: scaleX(0);
+            animation: drawStripe 1s ease-in forwards;
+        }
+
+        .r-rects rect {
+            transform-box: fill-box;
+            transform-origin: left center;
+            transform: scaleX(0);
+            animation: drawStripe 1s ease-in forwards;
+        }
+
+        @keyframes drawStripe {
+        to {
+            transform: scaleX(150);
+        }
+        }
+
+	.footer-links {
+		display: grid;
+		grid-area: nav;
+		grid-template-columns: auto auto;
+		text-align: right;
+		justify-content: end;
+		gap: 2rem;
+	}
+
+	    .footer-links a {
+			display:block;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: clamp(.75rem, 1.75vh, 2rem);
+            letter-spacing: -5%;
+        }
+
+        .footer-links a:hover {
+            color: var(--med);
+        }
 
 /*
 =====================
@@ -644,7 +704,18 @@ RESPONSIVE ELEMENTS
 	.tub-models {
 		grid-template-columns: repeat(2, 1fr);
    		gap: 0;
-		width: 100%;
+		width: 90%;
+	}
+
+	.early-logos {
+		grid-auto-flow: row;
+		padding: 4.5vmax;
+		/* grid-template-columns: 1fr; */
+	}
+
+	.footer-links {
+		grid-template-columns: auto auto;
+		gap: 5%;
 	}
 
 }

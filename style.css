@@ -287,6 +287,41 @@ STICKY NAVBAR
     display: block;
 }
 
+/* SVG Logo Attributes */
+.st0 {
+	fill: var(--light);
+}
+
+.st1 {
+	fill: none;
+}
+
+.st2 {
+	fill: var(--dark);
+}
+
+.st3 {
+	fill: var(--med);
+}
+
+/* SVG Stripe Attributes */
+.str1 {
+	fill: var(--light);
+}
+
+.str2 {
+	fill: var(--dark);
+}
+
+.str3 {
+	fill: var(--med);
+}
+
+#img-overlay {
+    display:none;
+}
+
+
 @media only screen and (max-width:850px) {
 
     /* .hover-container:hover img {
