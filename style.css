@@ -270,6 +270,72 @@ STICKY NAVBAR
     background-color: transparent;
 }
 
+	.footer-links {
+		display: grid;
+		position: relative;
+		grid-area: nav;
+		grid-template-columns: auto auto;
+		text-align: right;
+		justify-content: end;
+		gap: 2rem;
+	}
+
+		.footer-links.email-hover a {
+			opacity: 0;
+			pointer-events: none;
+		}
+
+		.footer-email-reveal {
+			position: absolute;
+		
+			/* Align to match where the links sit — adjust if your footer-links
+			uses a different alignment (right-aligned by default in project.css) */
+			top: 0;
+			right: 0;
+		
+			color: var(--med);       /* accent color so it reads as interactive */
+			font-weight: 600;
+			font-size: clamp(.75rem, 1.75vh, 2rem);  /* matches .footer-links a */
+			white-space: nowrap;
+		
+			opacity: 0;
+			pointer-events: none;
+			cursor: pointer;
+		
+			transition: opacity 0.25s ease, color 0.15s ease;
+		}
+
+		/* Fade the email in */
+		.footer-links.email-hover .footer-email-reveal {
+			opacity: 1;
+			pointer-events: auto;
+		}
+		
+		/* Hover state on the address itself — nudges to --dark as a subtle confirm */
+		.footer-email-reveal:hover {
+			color: var(--dark);
+		}
+		
+		/* "Copied!" flash — briefly shifts to the lightest theme color */
+		.footer-email-reveal:active {
+			color: var(--light);
+		}
+
+
+	    .footer-links a {
+			display:block;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: clamp(.75rem, 1.75vh, 2rem);
+            letter-spacing: -5%;
+			text-transform: uppercase;
+			transition: opacity 0.25s ease, color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--med);
+        }
+
 /* 
 ======================
 3D model viewer logic

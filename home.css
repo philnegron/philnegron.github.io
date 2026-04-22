@@ -215,10 +215,48 @@ MAIN LOGO AND EXTERNAL LINKS
             letter-spacing: -5%;
             padding: 0 1vw;
             text-transform: uppercase;
+            transition: opacity 0.25s ease, color 0.2s ease;  /* ← opacity added */
         }
 
         .nav-links a:hover {
             color: var(--med);
+        }
+
+        .nav-links.email-hover a {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .nav-email-reveal {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+        
+            color: var(--med);
+            font-weight: 600;
+            font-size: clamp(1.25rem, 1.75vw, 5rem);
+            letter-spacing: -5%;
+            white-space: nowrap;
+        
+            opacity: 0;
+            pointer-events: none;
+            cursor: pointer;
+        
+            transition: opacity 0.25s ease, color 0.15s ease;
+        }
+
+        .nav-links.email-hover .nav-email-reveal {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .nav-email-reveal:hover {
+            color: var(--dark);
+        }
+        
+        .nav-email-reveal:active {
+            color: var(--light);
         }
 
         .l-rects rect {

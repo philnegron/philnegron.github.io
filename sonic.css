@@ -221,7 +221,7 @@ ODDFELLOWS X SONIC
 	display: grid;
 	align-items: stretch;
 	justify-content: stretch;
-	grid-template-columns: 1fr 3fr;
+	grid-template-columns: 45% 55%;
 	grid-template-areas: 
 		'announcement bts'
 		'announce-text provideo-text';
@@ -237,7 +237,7 @@ ODDFELLOWS X SONIC
 	}
 
 	.bts {
-		grid-auto-flow: column;
+		grid-template-columns: 1fr 1fr;
 		gap: 1vmax;
 		grid-area: bts;
 		/* gap: 1vh; */
@@ -260,9 +260,9 @@ ODDFELLOWS X SONIC
 
 .tub-models {
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 1vh;
-	width: 100vmin;
-	/* width: var(--content-width); */
+    column-gap: 1.5vh;
+	/* width: 100vmin; */
+	width: var(--content-width);
 	padding: 1vh 0;
 }
 
@@ -349,6 +349,18 @@ RESPONSIVE DESIGN
 		'provideo-text';	
 		grid-template-columns: unset;
 	}
+
+		.announcement {
+			width: 70%;
+			align-items: center;
+			justify-content: center;
+			margin: 1vh auto;
+		}
+		
+		.announce-text {
+			width: 70%;
+			margin: 0 auto;
+		}
 
 	.tub-models {
 		grid-template-columns: repeat(2, 1fr);

@@ -316,26 +316,7 @@ footer {
         }
         }
 
-	.footer-links {
-		display: grid;
-		grid-area: nav;
-		grid-template-columns: auto auto;
-		text-align: right;
-		justify-content: end;
-		gap: 2rem;
-	}
 
-	    .footer-links a {
-			display:block;
-            color: var(--dark);
-            font-weight: 600;
-            font-size: clamp(.75rem, 1.75vh, 2rem);
-            letter-spacing: -5%;
-        }
-
-        .footer-links a:hover {
-            color: var(--med);
-        }
 
 /*
 =====================

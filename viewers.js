@@ -6,7 +6,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 //  STATE
 // ─────────────────────────────────────────────
 let activeContainer = null; // the currently live .model-viewer element
-const instances = new Map(); // container → { renderer, controls, animId, ro, dispose }
+const instances = new Map(); // container { renderer, controls, animId, ro, dispose }
 
 const FADE_MS = 400; // keep in sync with the CSS transition duration
 
@@ -15,12 +15,12 @@ const FADE_MS = 400; // keep in sync with the CSS transition duration
 // ─────────────────────────────────────────────
 document.querySelectorAll('.model-viewer').forEach(container => {
 
-    // Click on the preview layer → activate
+    // Click on the preview layer & activate
     container.querySelector('.mv-preview').addEventListener('click', () => {
         handleActivate(container);
     });
 
-    // Click the close button → deactivate
+    // Click the close button & deactivate
     container.querySelector('.mv-close').addEventListener('click', e => {
         e.stopPropagation();
         deactivate(container);
@@ -95,7 +95,7 @@ async function deactivate(container) {
 }
 
 // ─────────────────────────────────────────────
-//  THREE.JS SCENE — adapted from your original
+//  THREE.JS SCENE 
 // ─────────────────────────────────────────────
 function initViewer(container, canvasWrap) {
     const modelPath = container.dataset.model;
@@ -105,12 +105,12 @@ function initViewer(container, canvasWrap) {
     const w = canvasWrap.clientWidth  || container.clientWidth;
     const h = canvasWrap.clientHeight || container.clientHeight;
 
-    const camera = new THREE.PerspectiveCamera(38, w / h, 0.1, 100);
+    const camera = new THREE.PerspectiveCamera(35, w / h, 0.1, 100);
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.outputColorSpace = THREE.SRGBColorSpace;
-    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMapping = THREE.LinearToneMapping;
     renderer.toneMappingExposure = 1.0;
     renderer.setSize(w, h);
     canvasWrap.appendChild(renderer.domElement);
@@ -153,7 +153,7 @@ function initViewer(container, canvasWrap) {
         scene.add(model);
     });
 
-    // Resize observer — reacts to CSS layout changes, not just window resize
+    // Resize observer: reacts to CSS layout changes, not just window resize
     const ro = new ResizeObserver(() => {
         const nw = canvasWrap.clientWidth;
         const nh = canvasWrap.clientHeight;
