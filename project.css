@@ -168,7 +168,7 @@ section {
 
 /*
 =====================
-CONTENT: META GRID
+METADATA: PARENT GRID
 
 Was 2 rows and 2 columns, but that made it difficult to actually scale elements on mobile. This divided top row and bottom row allows the job date to be independent of the programs grid width and makes life not miserable.
 =====================
@@ -233,6 +233,14 @@ Was 2 rows and 2 columns, but that made it difficult to actually scale elements 
 			transition: var(--image-scale-anim);
 		}
 
+/* 
+======================
+METADATA: PROGRAMS USED
+
+Right aligned grid that will dynamically adjust
+======================
+*/
+
 .programs {
     display: grid;
     padding: clamp(.55rem, .55vmax, 1.5rem);
@@ -260,291 +268,11 @@ Was 2 rows and 2 columns, but that made it difficult to actually scale elements 
 			transform: scale(1.1);
 		}
 
-/*
-=====================
-ODDFELLOWS X SONIC
-=====================
+/* 
+======================
+FOOTER
+======================
 */
-
-/* Full-width section styling */
-.genesis {
-    background-color: #222;
-
-    /* Grid */
-    background-image: 
-        linear-gradient(to right, #444 3%, transparent 3%),
-        linear-gradient(to bottom, #444 3%, transparent 3%);
-    background-size: 60px 60px;
-    padding: 1.5vh 0;
-    
-    /* Animation */
-    animation: moveGridTopLeft 1s linear infinite;
-
-	margin-top: 2vh;
-	margin-bottom: 2vh;
-}
-
-@keyframes moveGridTopLeft {
-    from {
-        background-position: 0 0;
-    }
-    to {
-        background-position: -60px -60px;
-    }
-}
-
-#oddfellows-sonic-banner-grid {
-    --banner-height: 15rem;
-    display: grid;
-    grid-template-areas: 'tubs logo insert';
-    grid-template-columns: 1fr 1fr 1fr;
-    place-items: center;
-    gap: 1vh;
-    height: 100%;
-}
-
-#oddfellows-sonic-logo {
-    height: auto;
-    width: 100%;
-    object-fit: contain;
-    transition: var(--image-scale-anim);
-}
-
-	/* #oddfellows-sonic-logo:hover {
-		transform: scale(1.25);
-		z-index: 10;
-	} */
-
-#oddfellows-sonic-insert {
-    height: auto;
-    width: 60%;
-    object-fit: contain;
-    transition: var(--image-scale-anim);
-}
-
-	/* #oddfellows-sonic-insert:hover {
-		transform: scale(1.25);
-		z-index: 10;
-	} */
-
-#oddfellows-sonic-tub-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, min-content);
-    gap: 1vh;
-    justify-self: center;
-    width: 80%;
-}
-
-	#oddfellows-sonic-tub-grid img {
-		width: 100%;
-		object-fit: contain;
-		transition: var(--image-scale-anim);
-	}
-
-		/* #oddfellows-sonic-tub-grid img:hover {
-			transform: scale(1.25);
-			z-index: 10;
-		} */
-
-
-
-.tub-labels {
-	grid-template-columns: repeat(2, 1fr);
-	gap: 1vw;
-	place-items: center;
-}
-
-#oddfellows-sonic-packaging-tooltip {
-	 grid-area:tooltip;
-}
-
-
-.insert {
-	grid-template-areas: 
-		'fr-text front back ba-text';
-	align-items: center;
-	justify-content: center;
-	gap: 2vh;
-	padding: 2vh;
-	text-align: center;
-	height:100%;
-}
-
-#oddfellows-sonic-comparison-grid {
-	display: grid;
-	grid-auto-flow: unset;
-	grid-template-columns: repeat(8, auto);
-	grid-template-rows: 1fr 1fr;
-	place-items: center;
-	row-gap: 2vmax;
-	margin: 1% auto;
-	width: var(--content-width);
-}
-
-	#oddfellows-sonic-comparison-grid img {
-		width:auto;
-		height:clamp(2rem, 4.25vmax, 15rem);
-		border-radius:0%;
-	}
-	
-	/* Removing h5 margin here because it adds a huge gap otherwise */
-	.insert h5 {
-		margin: .5vmax;
-	}
-
-	.front {
-		grid-area: front;
-	}
-
-	.back {
-		grid-area: back;
-	}
-
-	.fr-text {
-		grid-area: fr-text;
-	}
-
-	.ba-text {
-		grid-area: ba-text;
-	}
-
-
-
-/* Reference image grid for Sonic artwork, within full-width wrapper, follows full-width-grid */
-.references {
-	grid-auto-flow: column;
-	align-items: center;
-	justify-content: space-evenly;
-	gap: 2vmax;
-	padding: 1vmax 0;
-}
-
-	.references img {
-		width: auto;
-		height: clamp(2rem, 15vmax, 45rem);
-	}
-
-.merch {
-	grid-auto-flow: column;
-	place-items: center;
-	gap: 1vmax;
-}
-
-	.merch img {
-		width: 100%;
-		height: auto;
-	}
-
-/* In-store mirror vinyl */
-.vinyl {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	gap: 2%;
-	padding: 2%;
-}
-
-.mirror {
-	grid-template-areas:
-		'selfie divider chase'
-		'selfie-text divider chase';
-	grid-template-columns: 1fr auto 2fr;
-	place-items: center;
-	column-gap: 3vw;
-	padding: 2vmax;
-}
-
-	.mirror > * {
-		display: grid;
-	}
-
-	.selfie {
-		grid-area: selfie;
-	}
-
-	.selfie-text {
-		grid-area: selfie-text;
-	}
-
-	.decal {
-		grid-area: divider;
-	}
-
-	.ring-chase {
-		grid-area: chase;
-	}
-
-.insta-grid {
-	grid-template-columns: repeat(3, 1fr);
-	gap: 1vh;
-}
-
-.sonic-social {
-	display: grid;
-	align-items: stretch;
-	justify-content: stretch;
-	grid-template-columns: 1fr 3fr;
-	/* grid-template-rows: auto auto; */
-	grid-template-areas: 
-		'announcement bts'
-		'announce-text provideo-text';
-	column-gap: 1vmax;
-}
-
-	.sonic-social > * {
-		display: grid;
-	}
-
-	.announcement {
-		grid-area: announcement;
-	}
-
-	.bts {
-		grid-auto-flow: column;
-		gap: 1vmax;
-		grid-area: bts;
-		/* gap: 1vh; */
-	}
-
-	.announce-text {
-		grid-area: announce-text;
-	}
-
-	.provideo-text {
-		grid-area: provideo-text;
-	}
-
-	.sonic-social video {
-		border-radius: 1vmax;
-		height:100%;
-		width: auto;
-		max-width: 100%;
-	}
-
-.tub-models {
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 1vh;
-	width: 100vmin;
-}
-
-	.model-viewer {
-		aspect-ratio: 1;
-		width: 100%;
-		border-radius: .35rem;
-		overflow: hidden;
-	}
-
-	.model-viewer canvas {
-		display: block;
-	}
-
-.early-logos {
-	grid-auto-flow: column;
-	align-items: center;
-	justify-content: center;
-	gap: 2vmax;
-	padding: 2vmax;
-}
 
 footer {
 	display: grid;
@@ -631,86 +359,9 @@ RESPONSIVE ELEMENTS
 			height: 7vmax;
 		}
 
-	.merch {
-		grid-template-rows: auto auto;
-	}
-
-
-
-	#oddfellows-sonic-packaging-grid {
-		grid-auto-flow: row;
-		grid-auto-rows: auto;
-		row-gap: 1vh;
-	}
-
-	#oddfellows-sonic-comparison-grid {
-		width:100%;
-	}
-
-	.press {
-		grid-template-rows: 1fr 1fr;
-	}
-
-	.tub-labels {
-		grid-template-columns: 1fr;
-	}
-
-	.insert {
-		grid-template-columns: unset;
-		grid-template-areas: 
-			'front back'
-			'fr-text ba-text';
-	}
-
-	.vinyl {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		column-gap: 3vw;
-		row-gap: 1.5vw;
-		padding: 3vw;
-	}	
-	
-	.mirror {
-		grid-template-areas:
-			'selfie'
-			'selfie-text' 
-			'divider'
-			'chase';
-		grid-template-columns:unset;
-	}
-
-		.selfie, .selfie-text {
-			width: 60vw;
-		}
-
-		.decal {
-			margin: 2vh 0;
-		}
-
 	.divider {
 		height: 4px;
 		width: 100%;
-	}
-
-	.sonic-social {
-		grid-template-areas: 
-		'announcement'
-		'announce-text'
-		'bts'
-		'provideo-text';	
-		grid-template-columns: unset;
-	}
-
-	.tub-models {
-		grid-template-columns: repeat(2, 1fr);
-   		gap: 0;
-		width: 90%;
-	}
-
-	.early-logos {
-		grid-auto-flow: row;
-		padding: 4.5vmax;
-		/* grid-template-columns: 1fr; */
 	}
 
 	.footer-links {

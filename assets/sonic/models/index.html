@@ -1,135 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" data-theme="default"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phil Negron | NYC Graphic Artist</title>
 	<script>
         document.documentElement.dataset.theme = localStorage.getItem('theme') || 'default';
     </script>
-    <link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="index_files/style.css">
+	<link rel="stylesheet" href="index_files/home.css">
 </head>
 <body>
     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" style="display:none">
         <defs>
-            <path id="tv-path" d="M327.39,288.94c-98.26,14.75-196.52,14.75-294.78,0-9.89-1.48-17.83-8.98-19.9-18.76-16.95-80.12-16.95-160.23,0-240.35,2.07-9.78,10.02-17.28,19.9-18.76,98.26-14.75,196.52-14.75,294.78,0,9.89,1.48,17.83,8.98,19.9,18.76,16.95,80.12,16.95,160.23,0,240.35-2.07,9.78-10.02,17.28-19.9,18.76Z"/>
+            <path id="tv-path" d="M327.39,288.94c-98.26,14.75-196.52,14.75-294.78,0-9.89-1.48-17.83-8.98-19.9-18.76-16.95-80.12-16.95-160.23,0-240.35,2.07-9.78,10.02-17.28,19.9-18.76,98.26-14.75,196.52-14.75,294.78,0,9.89,1.48,17.83,8.98,19.9,18.76,16.95,80.12,16.95,160.23,0,240.35-2.07,9.78-10.02,17.28-19.9,18.76Z"></path>
         </defs>
         <symbol id="tv-cutout" viewBox="0 0 360 300">
-            <use href="#tv-path"/>
+            <use href="#tv-path"></use>
         </symbol>
     </svg>
     <div class="page-wrapper">
         <div class="content">
             <div class="project-links top-row">
-                <a href="/sonic" class="project-link">
+                <a href="file:///sonic" class="project-link">
                     <p>Sonic the Hedgehog</p>
                     <svg class="project-frame" viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                             <clipPath id="tv-clip-1">
-                                <use href="#tv-path"/>
+                                <use href="#tv-path"></use>
                             </clipPath>
                         </defs>
-                        <rect x="0" y="0" width="360" height="300"
-                            class="frame-underlay"
-                            clip-path="url(#tv-clip-1)"/>
-                        <image style="mix-blend-mode: multiply;" class="img-default"
-                            href="assets/thumbnails/halftone/oddfellows-sonic-thumbnail-halftone.jpg"
-                            x="0" y="0" width="360" height="300"
-                            preserveAspectRatio="xMidYMid slice"
-                            clip-path="url(#tv-clip-1)"/>
-                        <image class="img-hover"
-                            href="assets/thumbnails/color/oddfellows-sonic-thumbnail-color.png"
-                            x="0" y="0" width="360" height="300"
-                            preserveAspectRatio="xMidYMid slice"
-                            clip-path="url(#tv-clip-1)"/>
-                        <rect x="0" y="0" width="360" height="300"
-                            class="frame-overlay"
-                            clip-path="url(#tv-clip-1)"/>
+                        <rect x="0" y="0" width="360" height="300" class="frame-underlay" clip-path="url(#tv-clip-1)"></rect>
+                        <image style="mix-blend-mode: multiply;" class="img-default" href="index_files/oddfellows-sonic-thumbnail-halftone.jpg" x="0" y="0" width="360" height="300" preserveAspectRatio="xMidYMid slice" clip-path="url(#tv-clip-1)"></image>
+                        <image class="img-hover" href="index_files/oddfellows-sonic-thumbnail-color.png" x="0" y="0" width="360" height="300" preserveAspectRatio="xMidYMid slice" clip-path="url(#tv-clip-1)"></image>
+                        <rect x="0" y="0" width="360" height="300" class="frame-overlay" clip-path="url(#tv-clip-1)"></rect>
                     </svg>
                 </a>
-                <a href="sonic.html" class="project-link">
+                <a href="file:///Users/phil/Documents/philnegron.github.io/sonic.html" class="project-link">
                     <p>OddFellows Ice Cream</p>
                     <svg class="project-frame" viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                             <clipPath id="tv-clip-2">
-                                <use href="#tv-path"/>
+                                <use href="#tv-path"></use>
                             </clipPath>
                         </defs>
-                        <rect x="0" y="0" width="360" height="300"
-                            class="frame-underlay"
-                            clip-path="url(#tv-clip-1)"/>
-                        <image style="mix-blend-mode: multiply;" class="img-default"
-                            href="assets/thumbnails/halftone/oddfellows-thumbnail-halftone.jpg"
-                            x="0" y="0" width="360" height="300"
-                            preserveAspectRatio="xMidYMid slice"
-                            clip-path="url(#tv-clip-1)"/>
-                        <image class="img-hover"
-                            href="assets/thumbnails/color/oddfellows-thumbnail-color.png"
-                            x="0" y="0" width="360" height="300"
-                            preserveAspectRatio="xMidYMid slice"
-                            clip-path="url(#tv-clip-1)"/>
-                        <rect x="0" y="0" width="360" height="300"
-                            class="frame-overlay"
-                            clip-path="url(#tv-clip-1)"/>
+                        <rect x="0" y="0" width="360" height="300" class="frame-underlay" clip-path="url(#tv-clip-1)"></rect>
+                        <image style="mix-blend-mode: multiply;" class="img-default" href="index_files/oddfellows-thumbnail-halftone.jpg" x="0" y="0" width="360" height="300" preserveAspectRatio="xMidYMid slice" clip-path="url(#tv-clip-1)"></image>
+                        <image class="img-hover" href="index_files/oddfellows-thumbnail-color.png" x="0" y="0" width="360" height="300" preserveAspectRatio="xMidYMid slice" clip-path="url(#tv-clip-1)"></image>
+                        <rect x="0" y="0" width="360" height="300" class="frame-overlay" clip-path="url(#tv-clip-1)"></rect>
                     </svg>
                 </a>
-                <a href="sonic.html" class="project-link">
+                <a href="file:///Users/phil/Documents/philnegron.github.io/sonic.html" class="project-link">
                     <p>Tipsy Scoop</p>
                     <svg class="project-frame" viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                             <clipPath id="tv-clip-3">
-                                <use href="#tv-path"/>
+                                <use href="#tv-path"></use>
                             </clipPath>
                         </defs>
-                        <rect x="0" y="0" width="360" height="300"
-                            class="frame-underlay"
-                            clip-path="url(#tv-clip-1)"/>
-                        <image style="mix-blend-mode: multiply;" class="img-default"
-                            href="assets/thumbnails/halftone/tipsy-scoop-thumbnail-halftone.jpg"
-                            x="0" y="0" width="360" height="300"
-                            preserveAspectRatio="xMidYMid slice"
-                            clip-path="url(#tv-clip-1)"/>
-                        <image class="img-hover"
-                            href="assets/thumbnails/color/tipsy-scoop-thumbnail-color.png"
-                            x="0" y="0" width="360" height="300"
-                            preserveAspectRatio="xMidYMid slice"
-                            clip-path="url(#tv-clip-1)"/>
-                        <rect x="0" y="0" width="360" height="300"
-                            class="frame-overlay"
-                            clip-path="url(#tv-clip-1)"/>
+                        <rect x="0" y="0" width="360" height="300" class="frame-underlay" clip-path="url(#tv-clip-1)"></rect>
+                        <image style="mix-blend-mode: multiply;" class="img-default" href="index_files/tipsy-scoop-thumbnail-halftone.jpg" x="0" y="0" width="360" height="300" preserveAspectRatio="xMidYMid slice" clip-path="url(#tv-clip-1)"></image>
+                        <image class="img-hover" href="index_files/tipsy-scoop-thumbnail-color.png" x="0" y="0" width="360" height="300" preserveAspectRatio="xMidYMid slice" clip-path="url(#tv-clip-1)"></image>
+                        <rect x="0" y="0" width="360" height="300" class="frame-overlay" clip-path="url(#tv-clip-1)"></rect>
                     </svg>
                 </a>
-                <a href="sonic.html" class="project-link">
+                <a href="file:///Users/phil/Documents/philnegron.github.io/sonic.html" class="project-link">
                     <p>WenDIY</p>
                     <svg class="project-frame" viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                             <clipPath id="tv-clip-4">
-                                <use href="#tv-path"/>
+                                <use href="#tv-path"></use>
                             </clipPath>
                         </defs>
-                        <rect x="0" y="0" width="360" height="300"
-                            class="frame-underlay"
-                            clip-path="url(#tv-clip-1)"/>
-                        <image style="mix-blend-mode: multiply;" class="img-default"
-                            href="assets/thumbnails/halftone/wendiy-thumbnail-halftone.jpg"
-                            x="0" y="0" width="360" height="300"
-                            preserveAspectRatio="xMidYMid slice"
-                            clip-path="url(#tv-clip-1)"/>
-                        <image class="img-hover"
-                            href="assets/thumbnails/color/wendiy-thumbnail-color.png"
-                            x="0" y="0" width="360" height="300"
-                            preserveAspectRatio="xMidYMid slice"
-                            clip-path="url(#tv-clip-1)"/>
-                        <rect x="0" y="0" width="360" height="300"
-                            class="frame-overlay"
-                            clip-path="url(#tv-clip-1)"/>
+                        <rect x="0" y="0" width="360" height="300" class="frame-underlay" clip-path="url(#tv-clip-1)"></rect>
+                        <image style="mix-blend-mode: multiply;" class="img-default" href="index_files/wendiy-thumbnail-halftone.jpg" x="0" y="0" width="360" height="300" preserveAspectRatio="xMidYMid slice" clip-path="url(#tv-clip-1)"></image>
+                        <image class="img-hover" href="index_files/wendiy-thumbnail-color.png" x="0" y="0" width="360" height="300" preserveAspectRatio="xMidYMid slice" clip-path="url(#tv-clip-1)"></image>
+                        <rect x="0" y="0" width="360" height="300" class="frame-overlay" clip-path="url(#tv-clip-1)"></rect>
                     </svg>
                 </a>
             </div>
             <div class="main-navigation">
                 <div class="logo">
-                    <svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 600 294.6" preserveAspectRatio="none">
+                    <svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 600 280" preserveAspectRatio="none">
                         <g id="g43">
                             <polygon id="polygon1" points="418.7 257.3 418.6 257.3 415.3 267.3 422 267.3 418.7 257.3" class="st1"></polygon>
                             <polygon id="polygon2" points="519.8 267.3 526.2 267.3 526.2 257.3 526.2 257.3 519.8 267.3" class="st1"></polygon>
@@ -194,114 +146,66 @@
                         <div class="theme-btn" data-theme="inverted"></div>
                     </div>
                     <div class="nav-links">
-                        <a class="email-hidden" href="#">Email</a>
-                        <a class="instagram" href="https://instagram.com/dialupbaby" target="_blank">Instagram</a>
+                        <a class="email-hidden" href="#">EMAIL</a>
+                        <a class="instagram" href="https://instagram.com/dialupbaby" target="_blank">INSTAGRAM</a>
                         <a class="email-reveal" href="#">Copied to clipboard</a>
                     </div>
                 </div>
             </div>
             <div class="project-links bottom-row">
-                <a href="sonic.html" class="project-link">
+                <a href="file:///Users/phil/Documents/philnegron.github.io/sonic.html" class="project-link">
                     <svg class="project-frame" viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                             <clipPath id="tv-clip-5">
-                                <use href="#tv-path"/>
+                                <use href="#tv-path"></use>
                             </clipPath>
                         </defs>
-                        <rect x="0" y="0" width="360" height="300"
-                            class="frame-underlay"
-                            clip-path="url(#tv-clip-1)"/>
-                        <image style="mix-blend-mode: multiply;" class="img-default"
-                            href="assets/thumbnails/halftone/sushi-on-jones-thumbnail-halftone.jpg"
-                            x="0" y="0" width="360" height="300"
-                            preserveAspectRatio="xMidYMid slice"
-                            clip-path="url(#tv-clip-1)"/>
-                        <image class="img-hover"
-                            href="assets/thumbnails/color/sushi-on-jones-thumbnail-color.jpg"
-                            x="0" y="0" width="360" height="300"
-                            preserveAspectRatio="xMidYMid slice"
-                            clip-path="url(#tv-clip-1)"/>
-                        <rect x="0" y="0" width="360" height="300"
-                            class="frame-overlay"
-                            clip-path="url(#tv-clip-1)"/>
+                        <rect x="0" y="0" width="360" height="300" class="frame-underlay" clip-path="url(#tv-clip-1)"></rect>
+                        <image style="mix-blend-mode: multiply;" class="img-default" href="index_files/sushi-on-jones-thumbnail-halftone.jpg" x="0" y="0" width="360" height="300" preserveAspectRatio="xMidYMid slice" clip-path="url(#tv-clip-1)"></image>
+                        <image class="img-hover" href="index_files/sushi-on-jones-thumbnail-color.jpg" x="0" y="0" width="360" height="300" preserveAspectRatio="xMidYMid slice" clip-path="url(#tv-clip-1)"></image>
+                        <rect x="0" y="0" width="360" height="300" class="frame-overlay" clip-path="url(#tv-clip-1)"></rect>
                     </svg>
                     <p>Sushi On Jones</p>
                 </a>
-                <a href="sonic.html" class="project-link">
+                <a href="file:///Users/phil/Documents/philnegron.github.io/sonic.html" class="project-link">
                     <svg class="project-frame" viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                             <clipPath id="tv-clip-6">
-                                <use href="#tv-path"/>
+                                <use href="#tv-path"></use>
                             </clipPath>
                         </defs>
-                        <rect x="0" y="0" width="360" height="300"
-                            class="frame-underlay"
-                            clip-path="url(#tv-clip-1)"/>
-                        <image style="mix-blend-mode: multiply;" class="img-default"
-                            href="assets/thumbnails/halftone/oddfellows-odb-thumbnail-halftone.jpg"
-                            x="0" y="0" width="360" height="300"
-                            preserveAspectRatio="xMidYMid slice"
-                            clip-path="url(#tv-clip-1)"/>
-                        <image class="img-hover"
-                            href="assets/thumbnails/color/oddfellows-odb-thumbnail-color.png"
-                            x="0" y="0" width="360" height="300"
-                            preserveAspectRatio="xMidYMid slice"
-                            clip-path="url(#tv-clip-1)"/>
-                        <rect x="0" y="0" width="360" height="300"
-                            class="frame-overlay"
-                            clip-path="url(#tv-clip-1)"/>
+                        <rect x="0" y="0" width="360" height="300" class="frame-underlay" clip-path="url(#tv-clip-1)"></rect>
+                        <image style="mix-blend-mode: multiply;" class="img-default" href="index_files/oddfellows-odb-thumbnail-halftone.jpg" x="0" y="0" width="360" height="300" preserveAspectRatio="xMidYMid slice" clip-path="url(#tv-clip-1)"></image>
+                        <image class="img-hover" href="index_files/oddfellows-odb-thumbnail-color.png" x="0" y="0" width="360" height="300" preserveAspectRatio="xMidYMid slice" clip-path="url(#tv-clip-1)"></image>
+                        <rect x="0" y="0" width="360" height="300" class="frame-overlay" clip-path="url(#tv-clip-1)"></rect>
                     </svg>
                     <p>Ol' Dirty Bastard</p>
                 </a>
-                <a href="sonic.html" class="project-link">
+                <a href="file:///Users/phil/Documents/philnegron.github.io/sonic.html" class="project-link">
                     <svg class="project-frame" viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                             <clipPath id="tv-clip-7">
-                                <use href="#tv-path"/>
+                                <use href="#tv-path"></use>
                             </clipPath>
                         </defs>
-                        <rect x="0" y="0" width="360" height="300"
-                            class="frame-underlay"
-                            clip-path="url(#tv-clip-1)"/>
-                        <image style="mix-blend-mode: multiply;" class="img-default"
-                            href="assets/thumbnails/halftone/oddfellows-prh-thumbnail-halftone.jpg"
-                            x="0" y="0" width="360" height="300"
-                            preserveAspectRatio="xMidYMid slice"
-                            clip-path="url(#tv-clip-1)"/>
-                        <image class="img-hover"
-                            href="assets/thumbnails/color/oddfellows-prh-thumbnail-color.png"
-                            x="0" y="0" width="360" height="300"
-                            preserveAspectRatio="xMidYMid slice"
-                            clip-path="url(#tv-clip-1)"/>
-                        <rect x="0" y="0" width="360" height="300"
-                            class="frame-overlay"
-                            clip-path="url(#tv-clip-1)"/>
+                        <rect x="0" y="0" width="360" height="300" class="frame-underlay" clip-path="url(#tv-clip-1)"></rect>
+                        <image style="mix-blend-mode: multiply;" class="img-default" href="index_files/oddfellows-prh-thumbnail-halftone.jpg" x="0" y="0" width="360" height="300" preserveAspectRatio="xMidYMid slice" clip-path="url(#tv-clip-1)"></image>
+                        <image class="img-hover" href="index_files/oddfellows-prh-thumbnail-color.png" x="0" y="0" width="360" height="300" preserveAspectRatio="xMidYMid slice" clip-path="url(#tv-clip-1)"></image>
+                        <rect x="0" y="0" width="360" height="300" class="frame-overlay" clip-path="url(#tv-clip-1)"></rect>
                     </svg>
                     <p>Penguin Random House</p>
                 </a>
-                <a href="sonic.html" class="project-link">
+                <a href="file:///Users/phil/Documents/philnegron.github.io/sonic.html" class="project-link">
                     <svg class="project-frame" viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                             <clipPath id="tv-clip-8">
-                                <use href="#tv-path"/>
+                                <use href="#tv-path"></use>
                             </clipPath>
                         </defs>
-                        <rect x="0" y="0" width="360" height="300"
-                            class="frame-underlay"
-                            clip-path="url(#tv-clip-1)"/>
-                        <image style="mix-blend-mode: multiply;" class="img-default"
-                            href="assets/thumbnails/halftone/placeholder-thumbnail-halftone.jpg"
-                            x="0" y="0" width="360" height="300"
-                            preserveAspectRatio="xMidYMid slice"
-                            clip-path="url(#tv-clip-1)"/>
-                        <image class="img-hover"
-                            href="assets/thumbnails/color/placeholder-thumbnail-color.png"
-                            x="0" y="0" width="360" height="300"
-                            preserveAspectRatio="xMidYMid slice"
-                            clip-path="url(#tv-clip-1)"/>
-                        <rect x="0" y="0" width="360" height="300"
-                            class="frame-overlay"
-                            clip-path="url(#tv-clip-1)"/>
+                        <rect x="0" y="0" width="360" height="300" class="frame-underlay" clip-path="url(#tv-clip-1)"></rect>
+                        <image style="mix-blend-mode: multiply;" class="img-default" href="index_files/placeholder-thumbnail-halftone.jpg" x="0" y="0" width="360" height="300" preserveAspectRatio="xMidYMid slice" clip-path="url(#tv-clip-1)"></image>
+                        <image class="img-hover" href="index_files/placeholder-thumbnail-color.png" x="0" y="0" width="360" height="300" preserveAspectRatio="xMidYMid slice" clip-path="url(#tv-clip-1)"></image>
+                        <rect x="0" y="0" width="360" height="300" class="frame-overlay" clip-path="url(#tv-clip-1)"></rect>
                     </svg>
                     <p>Placeholder</p>
                 </a>
@@ -311,6 +215,6 @@
     <div id="img-overlay" aria-hidden="true">
         <img id="img-overlay-img" src="" alt="">
     </div>
-    <script src="main.js"></script>
-</body>
-</html>
+    <script src="index_files/main.js"></script>
+
+</body></html>

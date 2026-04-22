@@ -10,9 +10,11 @@
         document.documentElement.dataset.theme = localStorage.getItem('theme') || 'default';
     </script>
 
+    <!-- style sheets, obviously -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="project.css">
-    
+    <link rel="stylesheet" href="sonic.css">
+
     <!-- three.js importmap + module viewer -->
     <script type="importmap">
     {
@@ -318,10 +320,38 @@
                 <div class="full-width genesis">
                     <p>3D models created for promotional materials</p>
                     <div class="full-width-grid tub-models">
-                        <div class="model-viewer" data-model="assets/sonic/models/oddfellows-sonic-tub-ghp.glb"></div>
-                        <div class="model-viewer" data-model="assets/sonic/models/oddfellows-sonic-tub-tms.glb"></div>
-                        <div class="model-viewer" data-model="assets/sonic/models/oddfellows-sonic-tub-fff.glb"></div>
-                        <div class="model-viewer" data-model="assets/sonic/models/oddfellows-sonic-tub-srf.glb"></div>
+                        <div class="model-viewer" data-model="assets/sonic/models/oddfellows-sonic-tub-ghp.glb">
+                            <div class="mv-preview">
+                                <img src="assets/sonic/packaging/oddfellows-sonic-tub-ghp.png" alt="Green Hills of Pandan tub" draggable="false">
+                            </div>
+                            <div class="mv-canvas-wrap"></div>
+                            <button class="mv-close" aria-label="Close viewer">&#x2715;</button>
+                        </div>
+
+                        <div class="model-viewer" data-model="assets/sonic/models/oddfellows-sonic-tub-tms.glb">
+                            <div class="mv-preview">
+                                <img src="assets/sonic/packaging/oddfellows-sonic-tub-tms.png" alt="Tales of Marshmallow Skies tub" draggable="false">
+                            </div>
+                            <div class="mv-canvas-wrap"></div>
+                            <button class="mv-close" aria-label="Close viewer">&#x2715;</button>
+                        </div>
+
+                        <div class="model-viewer" data-model="assets/sonic/models/oddfellows-sonic-tub-fff.glb">
+                            <div class="mv-preview">
+                                <img src="assets/sonic/packaging/oddfellows-sonic-tub-fff.png" alt="Fiery Fruity Frenemies tub" draggable="false">
+                            </div>
+                            <div class="mv-canvas-wrap"></div>
+                            <button class="mv-close" aria-label="Close viewer">&#x2715;</button>
+                        </div>
+
+                        <div class="model-viewer" data-model="assets/sonic/models/oddfellows-sonic-tub-srf.glb">
+                            <div class="mv-preview">
+                                <img src="assets/sonic/packaging/oddfellows-sonic-tub-srf.png" alt="Strawberry Roses Forever tub" draggable="false">
+                            </div>
+                            <div class="mv-canvas-wrap"></div>
+                            <button class="mv-close" aria-label="Close viewer">&#x2715;</button>
+                        </div>
+
                     </div>
                     <p>Click or tap to interact</p>
                 </div>

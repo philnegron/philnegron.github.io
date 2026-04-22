@@ -276,135 +276,16 @@ STICKY NAVBAR
 ======================
 */
 
-/*
-=====================
-LAZY MODEL VIEWER 
-=====================
-*/
 
 
-
-	/* .model-viewer canvas {
-		display: block;
-	} */
-
-/* The frame itself is the positioning root */
 .model-viewer {
-    position: relative;
     aspect-ratio: 1;
-    /* overflow: hidden; */
-    cursor: pointer;
-	border-radius: .35rem;
+    width: 100%;
 }
 
-/* ── Preview layer ── */
-.mv-preview {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 1;
-    transition: opacity 400ms ease;
-    z-index: 2;
-    /* Prevent the global img:hover scale from leaking out of the frame */
-    /* overflow: hidden; */
-}
-
-/* The thumbnail image */
-.mv-preview img {
-    width: auto;
-    height: 100%;
-    /* object-fit: contain; */
+.model-viewer canvas {
     display: block;
-    /* Suppress the global img:hover rule for this specific image */
-    transition: transform 0.25s ease;
-    pointer-events: none; /* let the parent .mv-preview handle the click */
-    user-select: none;
 }
-
-/* Scale on hover */
-.model-viewer:not(.mv-active) .mv-preview:hover img {
-    transform: scale(1.04);
-}
-
-/* Fade the preview out when viewer is active */
-.mv-preview.mv-hidden {
-    opacity: 0;
-    pointer-events: none;
-}
-
-.model-viewer:not(.mv-active):hover .mv-play-hint {
-    opacity: 1;
-}
-
-/* ── Canvas wrap ── */
-.mv-canvas-wrap {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: opacity 400ms ease;
-    z-index: 1;
-    pointer-events: none;
-}
-
-.mv-canvas-wrap.mv-visible {
-    opacity: 1;
-    pointer-events: all;
-}
-
-.mv-canvas-wrap canvas {
-    width: 100% !important;
-    height: 100% !important;
-    display: block;
-	border-radius: .5rem;
-
-}
-
-/* ── Close button ── */
-.mv-close {
-    position: absolute;
-    top: 6px;
-    right: 6px;
-    z-index: 5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 1.5rem;
-    height: 1.5rem;
-    padding: 0;
-    background: rgba(0, 0, 0, 0.45);
-    border: none;
-    border-radius: 50%;
-    color: white;
-    font-size: 0.7rem;
-    line-height: 1;
-    cursor: pointer;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease, background 0.2s ease;
-}
-
-.model-viewer.mv-active .mv-close {
-    opacity: 0.7;
-    pointer-events: all;
-}
-
-.mv-close:hover {
-    opacity: 1 !important;
-    background: rgba(0, 0, 0, 0.7);
-}
-
-/* ── Loading shimmer on the preview while scene builds ── */
-.model-viewer.mv-loading .mv-preview img {
-    filter: brightness(0.5);
-}
-
-/* ── One edge case: suppress global img:hover inside active viewer ── */
-.model-viewer.mv-active img {
-    transform: none !important;
-}
-
 
 /* SVG Logo Attributes */
 .st0 {
@@ -441,7 +322,7 @@ LAZY MODEL VIEWER
 }
 
 
-@media only screen and (max-width:725px) {
+@media only screen and (max-width:850px) {
 
     /* .hover-container:hover img {
         transform:scale(var(--hover-scale-mobile));

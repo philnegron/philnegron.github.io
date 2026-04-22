@@ -145,9 +145,8 @@ MAIN LOGO AND EXTERNAL LINKS
         display:grid;
         align-items: center;
         justify-items: center;
-        grid-template-rows: 40% 40%;
-        gap: 20%;
-        height: 100%;
+        gap: 7.5vmin;
+        translate: 0 0.75vmin;
     }
 
         .logo svg {
@@ -214,7 +213,6 @@ MAIN LOGO AND EXTERNAL LINKS
             font-size: clamp(1.25rem, 1.75vw, 5rem);
             letter-spacing: -5%;
             padding: 0 1vw;
-            text-transform: uppercase;
         }
 
         .nav-links a:hover {
