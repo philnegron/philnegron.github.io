@@ -18,8 +18,6 @@ ODDFELLOWS X SONIC
     /* Animation */
     animation: moveGridTopLeft 1s linear infinite;
 
-	margin-top: 2vh;
-	margin-bottom: 2vh;
 }
 
 @keyframes moveGridTopLeft {

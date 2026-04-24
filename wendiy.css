@@ -1,0 +1,20 @@
+/*
+=====================
+WENDIY
+=====================
+*/
+
+.fw-wendiy {
+    background-color: #50abd8;
+}
+
+.hero {
+    grid-template-columns: 1fr;
+    padding: 2vmax;
+    place-items: center;
+}
+
+    .hero img {
+        width: 80%;
+        height: auto;
+    }
