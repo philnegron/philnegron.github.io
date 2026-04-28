@@ -1,39 +1,68 @@
 const overlay = document.getElementById('img-overlay');
+const overlayImg = document.getElementById('img-overlay-img');
 let activeImg = null;
 let isOpening = false;
+
+function sourceTransform(img) {
+    const naturalW = img.naturalWidth;
+    const naturalH = img.naturalHeight;
+    const maxW = window.innerWidth * 0.9;
+    const maxH = window.innerHeight * 0.9;
+    const scale = Math.min(1, maxW / naturalW, maxH / naturalH);
+
+    const rect = img.getBoundingClientRect();
+    const deltaX = (rect.left + rect.width / 2) - window.innerWidth / 2;
+    const deltaY = (rect.top + rect.height / 2) - window.innerHeight / 2;
+    const scaleF = rect.width / (naturalW * scale);
+
+    return `translate(${deltaX}px, ${deltaY}px) scale(${scaleF})`;
+}
 
 document.querySelectorAll('.hover-container').forEach(container => {
     const img = container.querySelector('img');
 
     container.addEventListener('click', () => {
         if (activeImg) return;
-
         isOpening = true;
         activeImg = img;
 
-        const naturalW = img.naturalWidth;
-        const naturalH = img.naturalHeight;
-        const maxW = window.innerWidth * 0.9;
-        const maxH = window.innerHeight * 0.9;
-        const scale = Math.min(1, maxW / naturalW, maxH / naturalH);
+        overlayImg.src = img.src;
 
-        const rect = img.getBoundingClientRect();
-        const imgCenterX = rect.left + rect.width / 2;
-        const imgCenterY = rect.top + rect.height / 2;
-        const deltaX = window.innerWidth / 2 - imgCenterX;
-        const deltaY = window.innerHeight / 2 - imgCenterY;
-        const renderScale = (naturalH * scale) / rect.height;
+        // Snap to source image position with no transition
+        overlayImg.style.transition = 'none';
+        overlayImg.style.transform = sourceTransform(img);
 
-        img.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(${renderScale})`;
-        img.style.zIndex = '9999';
-        img.style.filter = 'var(--drop-shadow)';
-        img.style.borderRadius = '0';
+        // Force reflow so Safari paints the initial transform before animating
+        overlayImg.getBoundingClientRect();
 
+        // Now animate to center
+        overlayImg.style.transition = '';
+        overlayImg.style.transform = '';
         overlay.classList.add('active');
 
-        // Allow the document listener to respond after this click has fully resolved
         requestAnimationFrame(() => { isOpening = false; });
     });
+});
+
+document.addEventListener('click', () => {
+    if (isOpening || !activeImg) return;
+
+    const img = activeImg;
+    overlayImg.style.transform = sourceTransform(img);
+    overlay.classList.remove('active');
+
+    const handleClosing = () => {
+        // Reset src first to kill the ghosting
+        overlayImg.src = '';
+        // Use a slight timeout to ensure Safari registers the src change 
+        // before the layout/transform reset occurs
+        setTimeout(() => {
+            overlayImg.style.transform = '';
+            activeImg = null;
+        }, 10);
+    };
+
+    overlayImg.addEventListener('transitionend', handleClosing, { once: true });
 });
 
 document.addEventListener('click', () => {

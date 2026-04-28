@@ -251,9 +251,12 @@ ODDFELLOWS X SONIC
 
 	.sonic-social video {
 		border-radius: 1vmax;
-		height:100%;
-		width: auto;
-		max-width: 100%;
+		width: 100%;
+		height: auto;
+		aspect-ratio: auto;
+		display: block;
+		min-height: 0;
+		min-width: 0;
 	}
 
 .tub-models {

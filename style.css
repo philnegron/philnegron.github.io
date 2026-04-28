@@ -18,6 +18,7 @@ GLOBAL VARIABLE DEFINITIONS & THEME COLORS
     --copy: var(--dark); 
     --over: var(--med);
     --under: var(--bg);
+    --lightbox: rgba(244, 185, 68, 0.8);
 }
 
 :root[data-theme="latenight"] {
@@ -28,6 +29,7 @@ GLOBAL VARIABLE DEFINITIONS & THEME COLORS
     --copy: #e6d689;
     --over: var(--bg);
     --under: var(--dark);
+    --lightbox: rgba(55, 64, 104, 0.8);
 }
 
 :root[data-theme="inverted"] {
@@ -38,6 +40,7 @@ GLOBAL VARIABLE DEFINITIONS & THEME COLORS
     --copy: var(--dark);
     --over: var(--bg);
     --under: var(--dark);
+    --lightbox: rgba(72, 56, 87, 0.8);
 }
 
 /*

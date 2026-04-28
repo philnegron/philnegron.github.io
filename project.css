@@ -64,16 +64,14 @@ Images can be clicked on and will expand to the center of the screen from their 
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    /* background-color: rgba(0, 0, 0, 0); */
-	background-color: var(--bg);
-	opacity: 0;
-    transition: var(--image-scale-anim);
+	background-color: rgba(0,0,0,0);
+    transition: background-color 0.25s ease;
     pointer-events: none;
 }
 
 #img-overlay.active {
-    background-color: var(--bg);
-	opacity: 80%;
+    background-color: var(--lightbox);
+	opacity: 100%;
     pointer-events: auto;
 }
 
@@ -84,16 +82,13 @@ Images can be clicked on and will expand to the center of the screen from their 
     height: auto;
     object-fit: contain;
     filter: var(--drop-shadow);
-    border-radius: 0;
     pointer-events: none;
-    opacity: 0;
-    transform: scale(0.92);
-    transition: var(--image-scale-anim);
+    transition: transform 0.25s ease;
+	backface-visibility: hidden;
 }
 
 #img-overlay.active img {
-    opacity: 1;
-    transform: scale(1);
+    transform: none;
 }
 
 img {
