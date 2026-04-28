@@ -26,16 +26,21 @@ document.querySelectorAll('.hover-container').forEach(container => {
         isOpening = true;
         activeImg = img;
 
+        img.style.opacity = '0';
+
         overlayImg.src = img.src;
 
-        // Snap to source image position with no transition
+        // Snap to source position. Restore visibility here — after src and
+        // transform are already set — so there is no flash of an image at
+        // the wrong position before the animation starts.
         overlayImg.style.transition = 'none';
         overlayImg.style.transform = sourceTransform(img);
+        overlayImg.style.visibility = '';
 
         // Force reflow so Safari paints the initial transform before animating
         overlayImg.getBoundingClientRect();
 
-        // Now animate to center
+        // Animate to center
         overlayImg.style.transition = '';
         overlayImg.style.transform = '';
         overlay.classList.add('active');
@@ -52,31 +57,22 @@ document.addEventListener('click', () => {
     overlay.classList.remove('active');
 
     const handleClosing = () => {
-        // Reset src first to kill the ghosting
+        // Kill the transition. Intentionally do NOT restore it here — the open
+        // sequence sets transition:'none' itself at the start, so leaving it as
+        // 'none' is safe. Restoring via RAF was causing Safari to detect a
+        // transform delta and fire the expand animation on the now-empty element.
+        overlayImg.style.transition = 'none';
+        // Hide before clearing src/transform so the drop-shadowed blank element
+        // is never visible — that was the ghost frame.
+        overlayImg.style.visibility = 'hidden';
+        overlayImg.style.transform = '';
         overlayImg.src = '';
-        // Use a slight timeout to ensure Safari registers the src change 
-        // before the layout/transform reset occurs
-        setTimeout(() => {
-            overlayImg.style.transform = '';
-            activeImg = null;
-        }, 10);
+        // Restore thumbnail in the same tick — no gap, no blink.
+        img.style.opacity = '';
+        activeImg = null;
     };
 
     overlayImg.addEventListener('transitionend', handleClosing, { once: true });
-});
-
-document.addEventListener('click', () => {
-    if (isOpening || !activeImg) return;
-
-    overlay.classList.remove('active');
-    activeImg.style.transform = '';
-    activeImg.style.filter = '';
-    activeImg.style.borderRadius = '';
-
-    activeImg.addEventListener('transitionend', () => {
-        activeImg.style.zIndex = '';
-        activeImg = null;
-    }, { once: true });
 });
 
 // On load, apply saved theme (or default to "default")

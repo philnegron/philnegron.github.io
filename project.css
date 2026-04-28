@@ -48,7 +48,6 @@ Images can be clicked on and will expand to the center of the screen from their 
 	.hover-container img {
 		display: block;
 		pointer-events: auto;
-		transition: var(--image-scale-anim);
 	}
 
 	.hover-container:has(img[style*="z-index"]) {
@@ -91,13 +90,14 @@ Images can be clicked on and will expand to the center of the screen from their 
     transform: none;
 }
 
-img {
+
+/* img {
 	transition: var(--image-scale-anim);
 }
 
 	img:hover {
 		transform: scale(1.1);
-	}
+	} */
 
 /*
 =====================
@@ -123,7 +123,7 @@ section {
 		height: auto;
 		object-fit: cover;
 		border-radius: .35rem;
-		transition: var(--image-scale-anim);
+		/* transition: var(--image-scale-anim); */
 	}
 
 .descriptor {
@@ -207,7 +207,7 @@ Was 2 rows and 2 columns, but that made it difficult to actually scale elements 
 			height:100%;
 			object-fit: cover;
 			border-radius: .75rem;
-			transition: var(--image-scale-anim);
+			/* transition: var(--image-scale-anim); */
 		}
 
 		/* .image-row img:hover {
@@ -225,7 +225,7 @@ Was 2 rows and 2 columns, but that made it difficult to actually scale elements 
 			height: 100%;
 			/* object-fit: contain; */
 			border-radius: .5rem;
-			transition: var(--image-scale-anim);
+			/* transition: var(--image-scale-anim); */
 		}
 
 /* 

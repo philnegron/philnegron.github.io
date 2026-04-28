@@ -43,7 +43,7 @@ ODDFELLOWS X SONIC
     height: auto;
     width: 100%;
     object-fit: contain;
-    transition: var(--image-scale-anim);
+    /* transition: var(--image-scale-anim); */
 }
 
 	/* #oddfellows-sonic-logo:hover {
@@ -55,7 +55,7 @@ ODDFELLOWS X SONIC
     height: auto;
     width: 60%;
     object-fit: contain;
-    transition: var(--image-scale-anim);
+    /* transition: var(--image-scale-anim); */
 }
 
 	/* #oddfellows-sonic-insert:hover {
@@ -75,7 +75,7 @@ ODDFELLOWS X SONIC
 	#oddfellows-sonic-tub-grid img {
 		width: 100%;
 		object-fit: contain;
-		transition: var(--image-scale-anim);
+		/* transition: var(--image-scale-anim); */
 	}
 
 		/* #oddfellows-sonic-tub-grid img:hover {
