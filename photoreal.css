@@ -13,3 +13,18 @@
         width: 100%;
         height: auto;
     }
+
+.wii {
+    grid-auto-flow: column;
+    gap: 1vmax;
+}
+
+.hitachi {
+    grid-auto-flow: column;
+    gap: 1vmax;
+}
+
+.beer {
+    grid-auto-flow: column;
+    gap: 1vmax;
+}
