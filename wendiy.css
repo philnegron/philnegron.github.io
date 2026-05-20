@@ -18,3 +18,33 @@ WENDIY
         width: 80%;
         height: auto;
     }
+
+.photography {
+	display: flex;
+    flex: 0 1 auto;
+    gap: .75vh;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+    .photography img {
+        height: 17vh;
+        width: auto;
+    }
+
+.logo-dev {
+    width: inherit; 
+    /* Placeholder just to park this rule */
+}
+
+.final-logo {
+    padding: 4vh;    
+}
+
+.prices, .checkout, .biz {
+    grid-auto-flow: column;
+    gap: 1vh;
+    padding: 1vh;
+    place-items:center;
+}
