@@ -34,12 +34,17 @@ WENDIY
     }
 
 .logo-dev {
-    width: inherit; 
-    /* Placeholder just to park this rule */
+    grid-template-columns: auto auto;
+    place-items: center;
+    gap: 1vmax;
+}
+
+#early-logo-1 {
+    filter: drop-shadow(5px 5px 10px hsla(0, 0%, 0%, 0.315));
 }
 
 .final-logo {
-    padding: 4vh;    
+    padding: 4vmax;    
 }
 
 .prices, .checkout, .biz {

@@ -1,0 +1,15 @@
+.fw-photoreal {
+    background-color: var(--med);
+}
+
+.hero {
+    grid-template-columns: repeat(3,1fr);
+    padding: 2vmax;
+    place-items: center;
+    gap: 1vmax;
+}
+
+    .hero img {
+        width: 100%;
+        height: auto;
+    }
